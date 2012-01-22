@@ -1,18 +1,18 @@
-var svg_size = [900, 500], // width height
+var svgSize = [900, 500], // width height
     padding = [4, 20, 20, 30], // top right bottom left
-    size = [svg_size[0] - padding[1] - padding[3], svg_size[1] - padding[0] - padding[2]], // width height
+    size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
     ty = function(d) { return "translate(0," + y(d) + ")"; },
     stroke = function(d) { return d ? "#ccc" : "#666"; };
 
 // x-scale
 var x = d3.scale.linear()
-    .domain([0, 500])
+    .domain([0, 100])
     .range([0, size[0]]);
 
 // y-scale
 var y = d3.scale.linear()
-    .domain([100, 0])
+    .domain([1200, -100])
     .range([0, size[1]]);
 
 var svg = d3.select("div#graph").append("svg")
@@ -29,7 +29,7 @@ svg.append("rect")
     .style("fill", "#fff");
 
 var fx = x.tickFormat(10),
-  fy = y.tickFormat(10);
+    fy = y.tickFormat(10);
 
 // x-ticks
 var gx = svg.selectAll("g.x")
@@ -77,3 +77,20 @@ gye.append("text")
   .text(fy);
 
 gy.exit().remove();
+
+d3.json("data/2011.json", renderData);
+
+function renderData(data){
+    console.log(data.Films);
+    
+    var bubbleG = svg.append("g");
+    var bubbles = bubbleG.selectAll("circle")
+        .data(data.Films)
+        .enter()
+        .append("circle")
+        .attr("class", function(d){return d.Film;})
+        .attr("cx", function(d){return x(d['Rotten Tomatoes']);})
+        .attr("cy", function(d){return y(d['Profitability']);})
+        .attr("r", 3);
+        
+}
