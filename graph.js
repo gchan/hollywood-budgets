@@ -1,5 +1,6 @@
-var size = [710, 500], // width height
-    padding = [4, 20, 20, 40], // top right bottom left
+var svg_size = [900, 500], // width height
+    padding = [4, 20, 20, 30], // top right bottom left
+    size = [svg_size[0] - padding[1] - padding[3], svg_size[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
     ty = function(d) { return "translate(0," + y(d) + ")"; },
     stroke = function(d) { return d ? "#ccc" : "#666"; };
