@@ -2,3 +2,6 @@
 .DS_Store
 thumbs.db
 js/min
+docs
+examples
+js/tests
