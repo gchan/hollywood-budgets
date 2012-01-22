@@ -88,7 +88,9 @@ d3.json("data/2011.json", renderData);
 function renderData(data){
     console.log(data.Films);
     
-    var bubbleG = svg.append("g");
+    var bubbleG = svg.append("g")
+        .attr("class", "bubbles");
+
     var bubbles = bubbleG.selectAll("circle")
         .data(data.Films)
         .enter()
@@ -96,6 +98,7 @@ function renderData(data){
         .attr("class", function(d){return d.Film;})
         .attr("cx", function(d){return x(d['Rotten Tomatoes']);})
         .attr("cy", function(d){return y(d['Profitability']);})
+        .transition().duration(300)
         .attr("r", function(d){return b(d['Worldwide Gross']);});
         
 }
