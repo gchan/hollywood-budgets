@@ -31,7 +31,7 @@ svg.append("rect")
     .attr("width", size[0])
     .attr("height", size[1])
     .attr("stroke", "none")
-    .style("fill", "#fff");
+    .style("fill", "#F0ECEC");
 
 var fx = x.tickFormat(10),
     fy = y.tickFormat(10);
@@ -96,6 +96,8 @@ function renderData(data){
         .enter()
         .append("circle")
         .attr("class", function(d){return d.Film;})
+        .attr("stroke", "white").attr("stroke-width", 1.25)
+        .attr("fill", "#0276FD")
         .attr("cx", function(d){return x(d['Rotten Tomatoes']);})
         .attr("cy", function(d){return y(d['Profitability']);})
         .transition().duration(300)
