@@ -12,8 +12,13 @@ var x = d3.scale.linear()
 
 // y-scale
 var y = d3.scale.linear()
-    .domain([1200, -100])
+    .domain([1200, 0])
     .range([0, size[1]]);
+    
+// bubble-scale
+var b = d3.scale.log()
+    .domain([0.005, 2000])
+    .range([0, 13]);
 
 var svg = d3.select("div#graph").append("svg")
     .attr("width", size[0] + padding[3] + padding[1])
@@ -91,6 +96,6 @@ function renderData(data){
         .attr("class", function(d){return d.Film;})
         .attr("cx", function(d){return x(d['Rotten Tomatoes']);})
         .attr("cy", function(d){return y(d['Profitability']);})
-        .attr("r", 3);
+        .attr("r", function(d){return b(d['Worldwide Gross']);});
         
 }
