@@ -6,6 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <script type="text/javascript" src="js/d3/d3.js"></script>
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -41,7 +43,12 @@
       .hero-unit .span16 {
         min-height: 500px;
       }
-	  
+
+      /* Graph styling */
+      svg {
+        font: 10px sans-serif;
+        shape-rendering: crispEdges;
+      }
     </style>
 
     <!-- Le fav and touch icons -->
@@ -71,7 +78,9 @@
         <div class="row">
           <div class="span16">
             <h2>Main content</h2>
-			<div id="chart"></div>
+			<div id="graph"></div>
+            <script type="text/javascript" src="graph.js"></script>
+ 
           </div>
         </div>
       </div>
