@@ -19,6 +19,10 @@ var y = d3.scale.linear()
 var b = d3.scale.log()
     .domain([0.005, 2000])
     .range([0, 13]);
+    
+var storyColour = function(d){
+    return "#" + allData.Stories[d.Story].Colour;
+};
 
 var svg = d3.select("div#graph").append("svg")
     .attr("width", size[0] + padding[3] + padding[1])
@@ -89,23 +93,23 @@ gye.append("text")
 
 gy.exit().remove();
 
-d3.json("data/data.json", renderData);
+var bubbleG = svg.append("g")
+    .attr("class", "bubbles");
 
-function renderData(data){
-    console.log(data.Stories);
-    
-    var storyColour = function(d){
-        return "#" + data.Stories[d.Story].Colour;
-    };
-    
-    var bubbleG = svg.append("g")
-        .attr("class", "bubbles");
+d3.json("data/data.json", saveData);
 
+function saveData(data){
+    allData = data;
+    
     var data2011 = data.Films.filter(function (d){return d.Year == 2011})
         .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
 
+    renderData(data2011);
+}
+
+function renderData(data){    
     var bubbles = bubbleG.selectAll("circle")
-        .data(data2011)
+        .data(data)
         .enter()
         .append("circle")
         .attr("class", "film")
@@ -114,7 +118,6 @@ function renderData(data){
         .attr("cy", function(d){return y(d.Profitability);})
         .transition().duration(500).delay(function(d, i) { return i * 5; })
         .attr("r", function(d){return b(d.WorldwideGross);});
-        
 }
 
 function removeFilmSelection(selection){
@@ -153,4 +156,5 @@ function showStory(story){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
     showFilmSelection(selection);
+}enderData(yearData);
 }
