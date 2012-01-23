@@ -92,15 +92,15 @@ function renderData(data){
         .attr("class", "bubbles");
 
     var bubbles = bubbleG.selectAll("circle")
-        .data(data.Films.sort(function (a,b){return b['Worldwide Gross'] - a['Worldwide Gross'];}))
+        .data(data.Films.sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;}))
         .enter()
         .append("circle")
         .attr("class", function(d){return d.Film;})
         .attr("stroke", "white").attr("stroke-width", 1.5)
         .attr("fill", "steelblue").attr("fill-opacity", 0.8)
-        .attr("cx", function(d){return x(d['Rotten Tomatoes']);})
-        .attr("cy", function(d){return y(d['Profitability']);})
+        .attr("cx", function(d){return x(d.RottenTomatoes);})
+        .attr("cy", function(d){return y(d.Profitability);})
         .transition().duration(500).delay(function(d, i) { return i * 5; })
-        .attr("r", function(d){return b(d['Worldwide Gross']);});
+        .attr("r", function(d){return b(d.WorldwideGross);});
         
 }
