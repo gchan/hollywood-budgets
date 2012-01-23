@@ -109,8 +109,9 @@ function saveData(data){
 
 function renderData(data){    
     var bubbles = bubbleG.selectAll("circle")
-        .data(data)
-        .enter()
+        .data(data, function(d) { return d.Film; });
+        
+    bubbles.enter()
         .append("circle")
         .attr("class", "film")
         .attr("fill", storyColour)
@@ -118,6 +119,8 @@ function renderData(data){
         .attr("cy", function(d){return y(d.Profitability);})
         .transition().duration(500).delay(function(d, i) { return i * 5; })
         .attr("r", function(d){return b(d.WorldwideGross);});
+    
+    bubbles.exit().transition().duration(500).attr("r", 0).remove();
 }
 
 function removeFilmSelection(selection){
@@ -156,5 +159,14 @@ function showStory(story){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
     showFilmSelection(selection);
-}enderData(yearData);
+}
+
+function showYear(year){
+    var yearData = allData.Films.filter(function (d){return d.Year == year})
+        .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
+    renderData(yearData);
+}
+
+function showYears(years){
+    
 }
