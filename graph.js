@@ -135,12 +135,18 @@ function showTooltip(e, i){
     // console.log(e);
     // console.log(this);
     
-    svg.selectAll("circle")
-        .style("fill-opacity", 0.1);
+    
+    // console.log(svg.selectAll("circle"));
+    // console.log(d3.select(this)[0]);    
+    // console.log(svg.selectAll("circle").indexOf(d3.select(this)[0]));
 
     var circle = d3.select(this)
-        .style("fill-opacity", 0.8);
+        .attr("class", "film hovered");
     
+    svg.selectAll("circle.film:not(.hovered)")
+        .transition().duration(150)
+        .style("fill-opacity", 0.1);
+
     var tooltip = svg.selectAll("text.tooltip")
         .data([e], function(d){return d.Film;});
     
@@ -148,7 +154,7 @@ function showTooltip(e, i){
         .append("text")
         .attr("class", "tooltip")
         .attr("x", parseFloat(circle.attr("cx")) + parseFloat(circle.attr("r")))
-        .attr("y", parseFloat(circle.attr("cy")) + 2)
+        .attr("y", parseFloat(circle.attr("cy")) + 3)
         .text(e.Film);
    
     tooltip.attr("display", "inline")
@@ -159,8 +165,10 @@ function showTooltip(e, i){
 function hideTooltip(e, i){
     svg.selectAll("text.tooltip").attr("display", "none");
     
-    d3.selectAll("circle")
-        .style("fill-opacity", 0.8);
+    d3.selectAll("circle")        
+        .transition().duration(150)
+        .style("fill-opacity", 0.8)
+        .attr("class", "film");
 }
 
 function removeFilmSelection(selection){
