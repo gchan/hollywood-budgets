@@ -1,158 +1,136 @@
 {
-  "Stories" : [
-    {
-      "Story" : "Temptation",
+  "Stories" : {
+    "Temptation" : {
       "Colour" : "DCA590",
       "Description" : "P has to make a moral choice between right and wrong.",
       "ExampleOne" : "The Godfather",
       "ExampleTwo" : "The Sting"
     },
-    {
-      "Story" : "Rags To Riches",
+    "Rags To Riches" : {
       "Colour" : "4052A3",
       "Description" : "P is poor, then rich.",
       "ExampleOne" : "Trading Places",
       "ExampleTwo" : "La Vie En Rose"
     },
-    {
-      "Story" : "The Riddle",
+    "The Riddle" : {
       "Colour" : "A7D4CD",
       "Description" : "P has to solve a puzzle or a crime.",
       "ExampleOne" : "The Da Vinci Code",
       "ExampleTwo" : "Chinatown"
     },
-    {
-      "Story" : "Metamorphosis",
+    "Metamorphosis" : {
       "Colour" : "57585A",
       "Description" : "P literally changes into something else (i.e. a werewolf, hulk, giant cockroach).",
       "ExampleOne" : "Spiderman",
       "ExampleTwo" : "Pinocchio"
     },
-    {
-      "Story" : "Rescue",
+    "Rescue" : {
       "Colour" : "57585A",
       "Description" : "P must save someone who is trapped physically or emotionally.",
       "ExampleOne" : "The Golden Compass",
       "ExampleTwo" : "Die Hard"
     },
-    {
-      "Story" : "Tragedy",
+    "Tragedy" : {
       "Colour" : "C0852B",
       "Description" : "P is brought down by a fatal flaw in their character or by forces out of their control.",
       "ExampleOne" : "One Flew Over the Cuckoo's Nest",
       "ExampleTwo" : "Atonement"
     },
-    {
-      "Story" : "Love",
+    "Love" : {
       "Colour" : "A0D097",
       "Description" : "A couple meet and overcome obstacles to discover true love. Or - tragically - don't.",
       "ExampleOne" : "Titanic",
       "ExampleTwo" : "Grease"
     },
-    {
-      "Story" : "Monster Force",
+    "Monster Force" : {
       "Colour" : "EE2324",
       "Description" : "A monster / alien / something scary and supernatural must be fought and overcome.",
       "ExampleOne" : "Jaws",
       "ExampleTwo" : "The Exorcist"
     },
-    {
-      "Story" : "Revenge",
+    "Revenge" : {
       "Colour" : "81C040",
       "Description" : "P retaliates against another for a real or imagined injury.",
       "ExampleOne" : "Batman",
       "ExampleTwo" : "Kill Bill"
     },
-    {
-      "Story" : "Transformation",
+    "Transformation" : {
       "Colour" : "B8A231",
       "Description" : "P lives through a series of events that change them as a person.",
       "ExampleOne" : "Pretty Woman",
       "ExampleTwo" : "Muriel's Wedding"
     },
-    {
-      "Story" : "Fish Out Of Water",
+    "Fish Out Of Water" : {
       "Colour" : "DDD3B3",
       "Description" : "P tries to cope in a completely different place/time/world.",
       "ExampleOne" : "Mr Bean",
       "ExampleTwo" : "Trading Places"
     },
-    {
-      "Story" : "Maturation",
+    "Maturation" : {
       "Colour" : "D74E2A",
       "Description" : "P has a experience that matures them or starts a new stage of life, often adulthood.",
       "ExampleOne" : "The Graduate",
       "ExampleTwo" : "Juno"
     },
-    {
-      "Story" : "Pursuit",
+    "Pursuit" : {
       "Colour" : "B25F9F",
       "Description" : "P has to chase somebody or something, usually in a hide-and-seek fashion.",
       "ExampleOne" : "Goldfinger",
       "ExampleTwo" : "Bourne Ultimatum"
     },
-    {
-      "Story" : "Rivalry",
+    "Rivalry" : {
       "Colour" : "50B65A",
       "Description" : "P must triumph over a adversary to attain an object or goal.",
       "ExampleOne" : "Rocky",
       "ExampleTwo" : "The Outsiders"
     },
-    {
-      "Story" : "Underdog",
+    "Underdog" : {
       "Colour" : "A32921",
       "Description" : "Total loser faces overwhelming odds but wins in the end.",
       "ExampleOne" : "Slumdog Millionaire",
       "ExampleTwo" : "Forrest Gump"
     },
-    {
-      "Story" : "Discovery",
+    "Discovery" : {
       "Colour" : "8E5B24",
       "Description" : "Through a major upheaval, P discovers a truth about themselves and a better understanding of life.",
       "ExampleOne" : "Close Encounters",
       "ExampleTwo" : "Ben-Hur"
     },
-    {
-      "Story" : "Escape",
+    "Escape" : {
       "Colour" : "911566",
       "Description" : "P trapped by antagonistic forces and must escape. Pronto.",
       "ExampleOne" : "Poseidon Adventure",
       "ExampleTwo" : "Saw"
     },
-    {
-      "Story" : "Journey and Return",
+    "Journey and Return" : {
       "Colour" : "D1D2D4",
       "Description" : "P goes on a physical journey and returns changed.",
       "ExampleOne" : "Wizard of Oz",
       "ExampleTwo" : "Star Wars"
     },
-    {
-      "Story" : "Comedy",
+    "Comedy" : {
       "Colour" : "23B1A8",
       "Description" : "A series of complications lead P into ridiculous situations.",
       "ExampleOne" : "Ghostbusters",
       "ExampleTwo" : "Airplane"
     },
-    {
-      "Story" : "Quest",
+    "Quest" : {
       "Colour" : "A0D097",
       "Description" : "P searches for a person, place or thing, overcoming a number of challenges.",
       "ExampleOne" : "Raiders Of The Lost Ark",
       "ExampleTwo" : "Lord of the Rings"
     },
-    {
-      "Story" : "Sacrifice",
+    "Sacrifice" : {
       "Colour" : "763294",
       "Description" : "P must make a difficult choice between pleasing themselves or a higher purpose (e.g. love, honour).",
       "ExampleOne" : "300",
       "ExampleTwo" : "3:10 to Yuma"
     },
-    {
-      "Story" : "Wretched Excess",
+    "Wretched Excess" : {
       "Colour" : "6C6D70",
       "Description" : "P pushes the limits of acceptable behaviour, destroying themselves in the process.",
       "ExampleOne" : "There Will Be Blood",
       "ExampleTwo" : "Citizen Kane"
     }
-  ]
+  }
 }
