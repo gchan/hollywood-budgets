@@ -28,16 +28,19 @@ var svg = d3.select("div#graph").append("svg")
     .attr("transform", "translate(" + padding[3] + "," + padding[0] + ")");
 
 svg.append("rect")
+    .attr("class", "background")
     .attr("width", size[0])
     .attr("height", size[1])
-    .attr("stroke", "none")
-    .style("fill", "#F0ECEC");
+    .attr("stroke", "none");
 
 var fx = x.tickFormat(10),
     fy = y.tickFormat(10);
 
 // x-ticks
-var gx = svg.selectAll("g.x")
+var xTicks = svg.append("g")
+    .attr("class", "xTicks");
+    
+var gx = xTicks.selectAll("g.x")
   .data(x.ticks(10), String)
   .attr("transform", tx);
 
@@ -59,7 +62,10 @@ gxe.append("text")
 gx.exit().remove();
 
 // y-ticks
-var gy = svg.selectAll("g.y")
+var yTicks = svg.append("g")
+    .attr("class", "yTicks");
+
+var gy = yTicks.selectAll("g.y")
   .data(y.ticks(10), String)
   .attr("transform", ty);
 

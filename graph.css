@@ -5,3 +5,5 @@ div#graph svg {
     stroke: white;
     stroke-width: 1.5px;
     fill-opacity: 0.8; }
+  div#graph svg rect.background {
+    fill: #F0ECEC; }
