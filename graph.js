@@ -123,10 +123,37 @@ function renderData(data){
         .attr("fill", storyColour)
         .attr("cx", function(d){return x(d.RottenTomatoes);})
         .attr("cy", function(d){return y(d.Profitability);})
+        .on("mouseover", showTooltip)
+        .on("mouseout", hideTooltip)
         .transition().duration(500).delay(function(d, i) { return i * 2; })
         .attr("r", function(d){return b(d.WorldwideGross);});
     
     bubbles.exit().transition().duration(500).attr("r", 0).remove();
+}
+
+function showTooltip(e, i){
+    // console.log(e);
+    // console.log(this);
+    
+    var circle = d3.select(this);
+    
+    var tooltip = svg.selectAll("text.tooltip")
+        .data([e], function(d){return d.Film;});
+        
+    tooltip.enter()
+        .append("text")
+        .attr("class", "tooltip")
+        .attr("x", circle.attr("cx"))
+        .attr("y", circle.attr("cy"))
+        .text(e.Film);
+   
+    tooltip.attr("display", "inline")
+   
+    tooltip.exit().remove();
+}
+
+function hideTooltip(e, i){
+    svg.selectAll("text.tooltip").attr("display", "none");
 }
 
 function removeFilmSelection(selection){
