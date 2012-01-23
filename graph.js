@@ -101,8 +101,11 @@ function renderData(data){
     var bubbleG = svg.append("g")
         .attr("class", "bubbles");
 
+    var data2011 = data.Films.filter(function (d){return d.Year == 2011})
+        .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
+
     var bubbles = bubbleG.selectAll("circle")
-        .data(data.Films.sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;}))
+        .data(data2011)
         .enter()
         .append("circle")
         .attr("class", "film")
@@ -151,5 +154,3 @@ function showStory(story){
         .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
     showFilmSelection(selection);
 }
-
-
