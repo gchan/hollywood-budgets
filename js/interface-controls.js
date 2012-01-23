@@ -33,7 +33,9 @@ $(document).ready(function() {
     
     $(".btn.story").hover(
         function(e){
-            highlightStories($(e.target).text());
+            var btn = $(e.target);
+            if(btn.hasClass("primary"))
+                highlightStories(btn.text());
         }, 
         function(e){
             unhighlight();
@@ -42,8 +44,9 @@ $(document).ready(function() {
     
     $(".btn.year").hover(
         function(e){
-            console.log(parseInt($(e.target).text()));
-            highlightYear(parseInt($(e.target).text()));
+            var btn = $(e.target);
+            if(btn.hasClass("primary"))
+                highlightYear(parseInt(btn.text()));
         }, 
         function(e){
             unhighlight();
