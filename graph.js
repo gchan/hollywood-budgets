@@ -96,12 +96,21 @@ gy.exit().remove();
 var bubbleG = svg.append("g")
     .attr("class", "bubbles");
 
-d3.json("data/data.json", saveData);
+d3.json("data/data.json", dataLoaded);
 
-function saveData(data){
+function dataLoaded(data){
     allData = data;
 
     showYear(2011);
+    
+    // d3.select(".controls .well .stories")
+    // .selectAll("button")
+    // .data(d3.keys(allData.Stories))
+    // .enter()
+    // .append("button")
+    // .attr("class", "btn small")
+    // .text(function(d){return d})
+    // .style("background-color", function(d){return "#" + allData.Stories[d].Colour})
 }
 
 function renderData(data){    
@@ -158,6 +167,12 @@ function showStory(story){
     showFilmSelection(selection);
 }
 
+function showStories(stories){
+    var storiesData = allData.Films
+        .filter(function (d){return stories.indexOf(d.Story.toLowerCase()) != -1});
+    renderData(storiesData);
+}
+
 function showYear(year){
     var yearData = allData.Films.filter(function (d){return d.Year == year})
         .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
@@ -168,4 +183,13 @@ function showYears(years){
     var yearData = allData.Films.filter(function (d){return years.indexOf(d.Year) != -1;})
         .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
     renderData(yearData);    
+}
+
+function showFiltered(years, stories){
+   var filteredData = allData.Films
+        .filter(function (d){return years.indexOf(d.Year) != -1;})
+        .filter(function (d){return stories.indexOf(d.Story.toLowerCase()) != -1})
+        .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
+    renderData(filteredData);    
+
 }
