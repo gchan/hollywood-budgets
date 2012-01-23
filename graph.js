@@ -1,4 +1,4 @@
-var svgSize = [900, 500], // width height
+var svgSize = [620, 500], // width height
     padding = [4, 20, 20, 30], // top right bottom left
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
@@ -12,7 +12,7 @@ var x = d3.scale.linear()
 
 // y-scale
 var y = d3.scale.linear()
-    .domain([1200, 0])
+    .domain([1500, 0])
     .range([0, size[1]]);
     
 // bubble-scale
@@ -168,5 +168,7 @@ function showYear(year){
 }
 
 function showYears(years){
-    
+    var yearData = allData.Films.filter(function (d){return years.indexOf(d.Year) != -1;})
+        .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
+    renderData(yearData);    
 }
