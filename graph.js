@@ -113,3 +113,43 @@ function renderData(data){
         .attr("r", function(d){return b(d.WorldwideGross);});
         
 }
+
+function removeFilmSelection(selection){
+    selection
+        .transition()
+        .duration(300)
+        .attr("r", 0);
+        //.remove();
+}
+
+function showFilmSelection(selection){
+    selection
+        .transition()
+        .duration(300)
+        .attr("r", function(d){return b(d.WorldwideGross);});
+}
+
+function removeAllFilms(){
+    var selection = d3.selectAll(".film");
+    removeFilmSelection(selection);
+}
+
+function removeStory(story){
+    var selection = d3.selectAll(".film")
+        .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
+    removeFilmSelection(selection);
+}
+
+function showOnlyStory(story){
+    var selection = d3.selectAll(".film")
+        .filter(function (d){return d.Story.toLowerCase() != story.toLowerCase()});
+    removeFilmSelection(selection);
+}
+
+function showStory(story){
+    var selection = d3.selectAll(".film")
+        .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
+    showFilmSelection(selection);
+}
+
+
