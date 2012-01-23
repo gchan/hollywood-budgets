@@ -88,7 +88,7 @@ d3.json("data/data.json", renderData);
 function renderData(data){
     console.log(data.Stories);
     
-    var story = function(d){
+    var storyColour = function(d){
         return "#" + data.Stories[d.Story].Colour;
     };
     
@@ -99,9 +99,8 @@ function renderData(data){
         .data(data.Films.sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;}))
         .enter()
         .append("circle")
-        .attr("class", function(d){return d.Film;})
-        .attr("stroke", "white").attr("stroke-width", 1.5)
-        .attr("fill", story).attr("fill-opacity", 0.8)
+        .attr("class", "film")
+        .attr("fill", storyColour)
         .attr("cx", function(d){return x(d.RottenTomatoes);})
         .attr("cy", function(d){return y(d.Profitability);})
         .transition().duration(500).delay(function(d, i) { return i * 5; })

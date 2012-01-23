@@ -1,0 +1,7 @@
+div#graph svg {
+  font: 10px sans-serif;
+  shapeRendering: crispEdges; }
+  div#graph svg circle.film {
+    stroke: white;
+    stroke-width: 1.5px;
+    fill-opacity: 0.8; }
