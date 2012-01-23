@@ -30,4 +30,23 @@ $(document).ready(function() {
                 
         showFiltered(years, stories);
     }
+    
+    $(".btn.story").hover(
+        function(e){
+            highlightStories($(e.target).text());
+        }, 
+        function(e){
+            unhighlight();
+        }
+    );
+    
+    $(".btn.year").hover(
+        function(e){
+            console.log(parseInt($(e.target).text()));
+            highlightYear(parseInt($(e.target).text()));
+        }, 
+        function(e){
+            unhighlight();
+        }
+    );
 });

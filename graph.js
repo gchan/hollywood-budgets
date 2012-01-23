@@ -135,15 +135,10 @@ function showTooltip(e, i){
     // console.log(e);
     // console.log(this);
     
-    
-    // console.log(svg.selectAll("circle"));
-    // console.log(d3.select(this)[0]);    
-    // console.log(svg.selectAll("circle").indexOf(d3.select(this)[0]));
-
     var circle = d3.select(this)
-        .attr("class", "film hovered");
+        .attr("class", "film highlight");
     
-    svg.selectAll("circle.film:not(.hovered)")
+    svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(150)
         .style("fill-opacity", 0.1);
 
@@ -165,6 +160,33 @@ function showTooltip(e, i){
 function hideTooltip(e, i){
     svg.selectAll("text.tooltip").attr("display", "none");
     
+    d3.selectAll("circle")        
+        .transition().duration(150)
+        .style("fill-opacity", 0.8)
+        .attr("class", "film");
+}
+
+function highlightYear(year){
+    var selection = d3.selectAll(".film")
+        .filter(function (d){return d.Year == year})
+        .attr("class", "film highlight");
+        
+    svg.selectAll("circle.film:not(.highlight)")
+        .transition().duration(150)
+        .style("fill-opacity", 0.1);
+}
+
+function highlightStories(story){
+    var selection = d3.selectAll(".film")
+        .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()})
+        .attr("class", "film highlight");
+        
+    svg.selectAll("circle.film:not(.highlight)")
+        .transition().duration(150)
+        .style("fill-opacity", 0.1);
+}
+
+function unhighlight(){
     d3.selectAll("circle")        
         .transition().duration(150)
         .style("fill-opacity", 0.8)
