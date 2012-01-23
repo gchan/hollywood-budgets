@@ -100,11 +100,8 @@ d3.json("data/data.json", saveData);
 
 function saveData(data){
     allData = data;
-    
-    var data2011 = data.Films.filter(function (d){return d.Year == 2011})
-        .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
 
-    renderData(data2011);
+    showYear(2011);
 }
 
 function renderData(data){    
@@ -117,7 +114,7 @@ function renderData(data){
         .attr("fill", storyColour)
         .attr("cx", function(d){return x(d.RottenTomatoes);})
         .attr("cy", function(d){return y(d.Profitability);})
-        .transition().duration(500).delay(function(d, i) { return i * 5; })
+        .transition().duration(500).delay(function(d, i) { return i * 2; })
         .attr("r", function(d){return b(d.WorldwideGross);});
     
     bubbles.exit().transition().duration(500).attr("r", 0).remove();
