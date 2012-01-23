@@ -7,3 +7,6 @@ div#graph svg {
     fill-opacity: 0.8; }
   div#graph svg rect.background {
     fill: #F0ECEC; }
+  div#graph svg text.tooltip {
+    font-size: 10px;
+    font-weight: bold; }

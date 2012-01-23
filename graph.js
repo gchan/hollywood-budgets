@@ -135,16 +135,20 @@ function showTooltip(e, i){
     // console.log(e);
     // console.log(this);
     
-    var circle = d3.select(this);
+    svg.selectAll("circle")
+        .style("fill-opacity", 0.1);
+
+    var circle = d3.select(this)
+        .style("fill-opacity", 0.8);
     
     var tooltip = svg.selectAll("text.tooltip")
         .data([e], function(d){return d.Film;});
-        
+    
     tooltip.enter()
         .append("text")
         .attr("class", "tooltip")
-        .attr("x", circle.attr("cx"))
-        .attr("y", circle.attr("cy"))
+        .attr("x", parseFloat(circle.attr("cx")) + parseFloat(circle.attr("r")))
+        .attr("y", parseFloat(circle.attr("cy")) + 2)
         .text(e.Film);
    
     tooltip.attr("display", "inline")
@@ -154,6 +158,9 @@ function showTooltip(e, i){
 
 function hideTooltip(e, i){
     svg.selectAll("text.tooltip").attr("display", "none");
+    
+    d3.selectAll("circle")
+        .style("fill-opacity", 0.8);
 }
 
 function removeFilmSelection(selection){
