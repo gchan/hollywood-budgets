@@ -100,6 +100,12 @@ d3.json("data/data.json", dataLoaded);
 
 function dataLoaded(data){
     allData = data;
+    
+    var range = d3.extent(data.Films, function(d){return d.WorldwideGross;});
+    var min = range[0];
+    var max = range[1];
+    
+    updateSliderRange(min, max);
 
     showYear(2011);
     
@@ -128,12 +134,9 @@ function renderData(data){
         .transition().duration(500).delay(function(d, i) { return i * 2; })
         .attr("r", function(d){return b(d.WorldwideGross);});
     
-    bubbles.exit().transition().duration(500).attr("r", 0).remove();
-    
-    var min = d3.min(data, function(d){return d.WorldwideGross;});
-    var max = d3.max(data, function(d){return d.WorldwideGross;});
-    
-    updateSliderRange(min, max);
+    bubbles.exit()
+        .transition().duration(500)
+        .attr("r", 0).remove();
 }
 
 function showTooltip(e, i){
@@ -256,11 +259,13 @@ function showYears(years){
     renderData(yearData);    
 }
 
-function showFiltered(years, stories){
+function showFiltered(years, stories, grossRange){
    var filteredData = allData.Films
         .filter(function (d){return years.indexOf(d.Year) != -1;})
         .filter(function (d){return stories.indexOf(d.Story.toLowerCase()) != -1})
+        .filter(function (d){return d.WorldwideGross >= grossRange[0] && d.WorldwideGross <= grossRange[1];})
         .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
+
     renderData(filteredData);    
 
 }

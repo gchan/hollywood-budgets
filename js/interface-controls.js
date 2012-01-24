@@ -12,12 +12,17 @@ var updateSliderRange = function(min, max){
     
 $(document).ready(function() {
     $( "#slider-range" ).slider({
+        animate: true,
         range: true,
         min: 0,
+        //step: 50,
         max: 1000,
         values: [0, 1000],
         slide: function( event, ui ) {
             $( "#amount" ).text( "Worldwide Gross: $" + ui.values[ 0 ] + "m - $" + ui.values[ 1 ] + "m");
+        },
+        stop: function(){
+            renderSelection();
         }
     });
                             
@@ -49,8 +54,12 @@ $(document).ready(function() {
             if(btn.hasClass("primary"))
                 years.push(parseInt(btn.text()));
         });
-                
-        showFiltered(years, stories);
+        
+        var grossRange = [];
+        grossRange.push($( "#slider-range" ).slider( "values", 0 ));
+        grossRange.push($( "#slider-range" ).slider( "values", 1 ));
+        
+        showFiltered(years, stories, grossRange);
     }
     
     $(".btn.story").hover(
