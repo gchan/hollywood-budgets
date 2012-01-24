@@ -1,4 +1,7 @@
 var updateSliderRange = function(min, max){
+    min = min ? min : 0;
+    max = max ? max : 0;
+    
     $( "#slider-range" ).slider({
         min: Math.round(min),
         max: Math.round(max),
