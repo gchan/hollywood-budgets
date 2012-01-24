@@ -43,8 +43,8 @@ $(document).ready(function() {
         range: true,
         min: 0,
         step: 50,
-        max: 1000,
-        values: [0, 1000],
+        max: 2750,
+        values: [0, 2750],
         slide: function( event, ui ) {
             $( "#amount" ).text( "Worldwide Gross: $" + ui.values[ 0 ] + "m - $" + ui.values[ 1 ] + "m");
             
@@ -54,6 +54,8 @@ $(document).ready(function() {
             renderSelection();
         }
     });
+    
+    $( "#amount" ).text( "Worldwide Gross: $" + 0 + "m - $" + $( "#slider-range" ).slider( "values", 1 ) + "m" );
                             
     $(".btn.year").click(function(e){
         var target = $(e.target);
