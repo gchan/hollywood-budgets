@@ -101,11 +101,9 @@ d3.json("data/data.json", dataLoaded);
 function dataLoaded(data){
     allData = data;
     
-    var range = d3.extent(data.Films, function(d){return d.WorldwideGross;});
-    var min = range[0];
-    var max = range[1];
+    var max = d3.max(data.Films, function(d){return d.WorldwideGross;})
     
-    updateSliderRange(min, max);
+    updateSliderMax(max);
 
     showYear(2011);
     

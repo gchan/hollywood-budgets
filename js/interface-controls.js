@@ -1,14 +1,12 @@
-function updateSliderRange(min, max){
-    min = min ? Math.round(min) : 0;
-    max = max ? Math.round(max) : 0;
-    
+function updateSliderMax(max){
+    max = max ? Math.round((max/50 + 1)) * 50 : 0;
+        
     $( "#slider-range" ).slider({
-        min: min,
         max: max,
-        values: [min, max],
+        values: [0, max],
     });
  
-    $( "#amount" ).text( "Worldwide Gross: $" + min + "m - $" + max + "m" );
+    $( "#amount" ).text( "Worldwide Gross: $" + 0 + "m - $" + max + "m" );
 };
     
 function filterIfSteady(min, max){
