@@ -6,6 +6,9 @@ div#graph svg {
         stroke-width: 1.5px;
         fill-opacity: 0.8;
     }
+    circle.film.highlight {
+        fill-opacity: 1;
+    }
     rect.background {
         fill: #F0ECEC;
     }

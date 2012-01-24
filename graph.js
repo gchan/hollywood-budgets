@@ -129,11 +129,11 @@ function renderData(data){
         .attr("cy", function(d){return y(d.Profitability);})
         .on("mouseover", showTooltip)
         .on("mouseout", hideTooltip)
-        .transition().duration(500).delay(function(d, i) { return i * 2; })
+        .transition().duration(300).delay(function(d, i) { return i * 0.5; })
         .attr("r", function(d){return b(d.WorldwideGross);});
     
     bubbles.exit()
-        .transition().duration(500)
+        .transition().duration(300)
         .attr("r", 0).remove();
 }
 
@@ -167,7 +167,7 @@ function hideTooltip(e, i){
     svg.selectAll("text.tooltip").attr("display", "none");
     
     d3.selectAll("circle")        
-        .transition().duration(150)
+        .transition().duration(50)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
 }
@@ -175,28 +175,26 @@ function hideTooltip(e, i){
 function highlightYear(year){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Year == year})
-        .attr("class", "film highlight")
-        .style("fill-opacity", 1);
+        .attr("class", "film highlight");
         
     svg.selectAll("circle.film:not(.highlight)")
-        .transition().duration(150)
+        .transition().duration(50)
         .style("fill-opacity", 0.1);
 }
 
 function highlightStories(story){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()})
-        .attr("class", "film highlight")        
-        .style("fill-opacity", 1);
+        .attr("class", "film highlight");
         
     svg.selectAll("circle.film:not(.highlight)")
-        .transition().duration(150)
+        .transition().duration(50)
         .style("fill-opacity", 0.1);
 }
 
 function unhighlight(){
     d3.selectAll("circle.film")
-        .transition().duration(150)
+        .transition().duration(50)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
 }
