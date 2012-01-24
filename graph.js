@@ -113,7 +113,7 @@ function dataLoaded(data){
     // .style("background-color", function(d){return "#" + allData.Stories[d].Colour})
 }
 
-function renderData(data){    
+function renderData(data){
     var bubbles = bubbleG.selectAll("circle")
         .data(data, function(d) { return d.Film; });
         
@@ -169,7 +169,8 @@ function hideTooltip(e, i){
 function highlightYear(year){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Year == year})
-        .attr("class", "film highlight");
+        .attr("class", "film highlight")
+        .style("fill-opacity", 1);
         
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(150)
@@ -179,7 +180,8 @@ function highlightYear(year){
 function highlightStories(story){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()})
-        .attr("class", "film highlight");
+        .attr("class", "film highlight")        
+        .style("fill-opacity", 1);
         
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(150)
@@ -187,7 +189,7 @@ function highlightStories(story){
 }
 
 function unhighlight(){
-    d3.selectAll("circle")        
+    d3.selectAll("circle.film")        
         .transition().duration(150)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
