@@ -38,7 +38,9 @@ $(document).ready(function() {
                 highlightStories(btn.text());
         }, 
         function(e){
-            unhighlight();
+            var btn = $(e.target);
+            if(btn.hasClass("primary"))
+                unhighlight();
         }
     );
     
@@ -49,7 +51,9 @@ $(document).ready(function() {
                 highlightYear(parseInt(btn.text()));
         }, 
         function(e){
-            unhighlight();
+            var btn = $(e.target);
+            if(btn.hasClass("primary"))
+                unhighlight();
         }
     );
 });
