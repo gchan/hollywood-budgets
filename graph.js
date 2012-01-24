@@ -129,6 +129,11 @@ function renderData(data){
         .attr("r", function(d){return b(d.WorldwideGross);});
     
     bubbles.exit().transition().duration(500).attr("r", 0).remove();
+    
+    var min = d3.min(data, function(d){return d.WorldwideGross;});
+    var max = d3.max(data, function(d){return d.WorldwideGross;});
+    
+    updateSliderRange(min, max);
 }
 
 function showTooltip(e, i){
@@ -189,7 +194,7 @@ function highlightStories(story){
 }
 
 function unhighlight(){
-    d3.selectAll("circle.film")        
+    d3.selectAll("circle.film")
         .transition().duration(150)
         .style("fill-opacity", 0.8)
         .attr("class", "film");

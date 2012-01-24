@@ -1,4 +1,23 @@
+var updateSliderRange = function(min, max){
+    $( "#slider-range" ).slider({
+        min: Math.round(min),
+        max: Math.round(max),
+        values: [min, max],
+    });       
+    $( "#amount" ).text( "Worldwide Gross: $" + $( "#slider-range" ).slider( "values", 0 ) + "m - $" + $( "#slider-range" ).slider( "values", 1 ) + "m" );
+};
+    
 $(document).ready(function() {
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 1000,
+        values: [0, 1000],
+        slide: function( event, ui ) {
+            $( "#amount" ).text( "Worldwide Gross: $" + ui.values[ 0 ] + "m - $" + ui.values[ 1 ] + "m");
+        }
+    });
+                            
     $(".btn.year").click(function(e){
         var target = $(e.target);
         target.toggleClass("primary");
