@@ -7,7 +7,7 @@ var svgSize = [620, 500], // width height
 
 // x-scale
 var x = d3.scale.linear()
-    .domain([0, 100])
+    .domain([0, 103])
     .range([0, size[0]]);
 
 // y-scale
@@ -31,11 +31,6 @@ var svg = d3.select("div#graph").append("svg")
 	.append("g")
     .attr("transform", "translate(" + padding[3] + "," + padding[0] + ")");
 
-svg.append("rect")
-    .attr("class", "background")
-    .attr("width", size[0])
-    .attr("height", size[1])
-    .attr("stroke", "none");
 
 var fx = x.tickFormat(10),
     fy = y.tickFormat(10);
