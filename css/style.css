@@ -20,14 +20,9 @@ body {
 }
 
 .row > .controls {
-    padding-left: 10px;
+    padding-left: 17px;
     border-left: 1px solid #666;
-    margin-left: -13px;
-}
-
-.well {
-    margin-right: 20px;
-    padding: 10px 5px;
+    margin-left: -19px;
 }
 
 #slider-range {
@@ -35,6 +30,20 @@ body {
 }
 
 div .years, .stories, .worldwide-gross {
-    padding: 10px 5px;
-    margin-right: 20px;
+    padding: 10px 5px 3px 0px;
+    margin-right: 9px;
+}
+
+.btn.story {
+    margin-bottom: 3px;
+}
+
+.btn.story.short {
+    min-width: 71px;
+}
+.btn.story.long {
+    min-width: 115px;
+}
+.btn.year {
+    min-width: 50px;
 }
