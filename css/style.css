@@ -47,3 +47,11 @@ div .years, .stories, .worldwide-gross {
 .btn.year {
     min-width: 50px;
 }
+
+.film-label {
+    font-weight: bold;
+}
+
+.film-datum {
+    font-weight: normal;
+}

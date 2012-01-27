@@ -146,6 +146,15 @@ function showTooltip(e, i){
     var tooltip = svg.selectAll("text.tooltip")
         .data([e], function(d){return d.Film;});
     
+    d3.select("#film-name").text(e.Film);
+    d3.select("#film-year").text(e.Year);
+    d3.select("#film-genre").text(e.Genre);
+    d3.select("#film-story").text(e.Story);
+    d3.select("#film-rating").text(e.RottenTomatoes + "%");
+    d3.select("#film-profitability").text(e.Profitability + "%");
+    d3.select("#film-gross").text("$" + e.WorldwideGross + "m");
+    d3.select("#film-budget").text("$" + e.Budget + "m");
+
     var renderLeft = e.RottenTomatoes > 65;
     tooltip.enter()
         .append("text")
@@ -167,6 +176,9 @@ function hideTooltip(e, i){
         .transition().duration(50)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
+        
+    d3.selectAll(".film-datum")
+        .text("...");
 }
 
 function highlightYear(year){
