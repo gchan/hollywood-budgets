@@ -138,7 +138,7 @@ function showTooltip(e, i){
     
     var circle = d3.select(this)
         .attr("class", "film highlight");
-    
+
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(150)
         .style("fill-opacity", 0.1);
@@ -146,10 +146,12 @@ function showTooltip(e, i){
     var tooltip = svg.selectAll("text.tooltip")
         .data([e], function(d){return d.Film;});
     
+    var renderLeft = e.RottenTomatoes > 65;
     tooltip.enter()
         .append("text")
         .attr("class", "tooltip")
-        .attr("x", parseFloat(circle.attr("cx")) + parseFloat(circle.attr("r")))
+        .style("text-anchor", renderLeft ? "end" : "start")
+        .attr("x", parseFloat(circle.attr("cx")) + parseFloat(circle.attr("r") * (renderLeft ? -1 : 1)))
         .attr("y", parseFloat(circle.attr("cy")) + 3)
         .text(e.Film);
    
