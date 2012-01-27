@@ -56,7 +56,31 @@ $(document).ready(function() {
     });
     
     $( "#amount" ).text( "Worldwide Gross: $" + 0 + "m - $" + $( "#slider-range" ).slider( "values", 1 ) + "m" );
-                            
+
+    $('.btn.all-years').click(function(e){
+        $('.btn.year').each(function(i, e){
+                $(e).addClass("primary");
+            });
+        renderSelection();
+    });
+    
+    $('.btn.all-stories').click(function(e){
+        $('.btn.story').each(function(i, e){
+            $(e).addClass("primary");
+        });
+        renderSelection();
+    });
+    
+    $('.btn.deselect-all').click(function(e){
+        $('.btn.year').each(function(i, e){
+            $(e).removeClass("primary");
+        });
+        $('.btn.story').each(function(i, e){
+            $(e).removeClass("primary");
+        });
+        removeAllFilms();
+    });
+    
     $(".btn.year").click(function(e){
         var target = $(e.target);
         target.toggleClass("primary");

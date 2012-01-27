@@ -210,26 +210,7 @@ function showFilmSelection(selection){
 }
 
 function removeAllFilms(){
-    var selection = d3.selectAll(".film");
-    removeFilmSelection(selection);
-}
-
-function removeStory(story){
-    var selection = d3.selectAll(".film")
-        .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
-    removeFilmSelection(selection);
-}
-
-function showOnlyStory(story){
-    var selection = d3.selectAll(".film")
-        .filter(function (d){return d.Story.toLowerCase() != story.toLowerCase()});
-    removeFilmSelection(selection);
-}
-
-function showStory(story){
-    var selection = d3.selectAll(".film")
-        .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
-    showFilmSelection(selection);
+   renderData([]);
 }
 
 function showStories(stories){
@@ -253,10 +234,9 @@ function showYears(years){
 function showFiltered(years, stories, grossRange){
    var filteredData = allData.Films
         .filter(function (d){return years.indexOf(d.Year) != -1;})
-        .filter(function (d){return stories.indexOf(d.Story.toLowerCase()) != -1})
         .filter(function (d){return d.WorldwideGross >= grossRange[0] && d.WorldwideGross <= grossRange[1];})
+        .filter(function (d){return stories.indexOf(d.Story.toLowerCase()) != -1})
         .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
 
-    renderData(filteredData);    
-
+    renderData(filteredData);
 }
