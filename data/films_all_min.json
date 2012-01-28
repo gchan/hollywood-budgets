@@ -3861,16 +3861,6 @@
       "Year" : 2009
     },
     {
-      "Film" : "All About Steve ",
-      "RottenTomatoes" : 6,
-      "Story" : "Comedy",
-      "Genre" : "Comedy",
-      "WorldwideGross" : 40.13,
-      "Budget" : 15,
-      "Profitability" : 267.53,
-      "Year" : 2010
-    },
-    {
       "Film" : "American Gangster",
       "RottenTomatoes" : 79,
       "Story" : "Pursuit",

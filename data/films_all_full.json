@@ -6563,23 +6563,6 @@
       "Year" : 2009
     },
     {
-      "Film" : "All About Steve ",
-      "LeadStudio" : "Independent",
-      "RottenTomatoes" : 6,
-      "AudienceScore" : 35,
-      "Story" : "Comedy",
-      "Genre" : "Comedy",
-      "TheatresUSOpening" : 2251,
-      "GrossUSOpening" : 4994,
-      "DomesticGross" : 33.86,
-      "ForeignGross" : 6.26,
-      "WorldwideGross" : 40.13,
-      "Budget" : 15,
-      "Profitability" : 267.53,
-      "OpeningWeekend" : 11.2,
-      "Year" : 2010
-    },
-    {
       "Film" : "American Gangster",
       "LeadStudio" : "Universal",
       "RottenTomatoes" : 79,
