@@ -129,13 +129,15 @@ function showTooltip(e, i){
     var circle = d3.select(this)
         .attr("class", "film highlight");
 
+    bubbleG.node().appendChild(circle.node());
+
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(150)
         .style("fill-opacity", 0.1);
 
     var tooltip = svg.selectAll("text.tooltip")
         .data([e], function(d){return d.Film;});
-    
+
     d3.select("#film-name").text(e.Film);
     d3.select("#film-year").text(e.Year);
     d3.select("#film-genre").text(e.Genre);
@@ -153,7 +155,7 @@ function showTooltip(e, i){
         .attr("x", parseFloat(circle.attr("cx")) + parseFloat(circle.attr("r") * (renderLeft ? -1 : 1)))
         .attr("y", parseFloat(circle.attr("cy")) + 3)
         .text(e.Film);
-   
+
     tooltip.attr("display", "inline")
    
     tooltip.exit().remove();
@@ -177,7 +179,7 @@ function highlightYear(year){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Year == year})
         .attr("class", "film highlight");
-        
+           
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(50)
         .style("fill-opacity", 0.1);
@@ -187,7 +189,7 @@ function highlightStories(story){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()})
         .attr("class", "film highlight");
-        
+
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(50)
         .style("fill-opacity", 0.1);
