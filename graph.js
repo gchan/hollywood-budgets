@@ -152,14 +152,10 @@ function showTooltip(e, i){
         .attr("x", parseFloat(circle.attr("cx")) + parseFloat(circle.attr("r") * (renderLeft ? -1 : 1)))
         .attr("y", parseFloat(circle.attr("cy")) + 3)
         .text(e.Film);
-
-    tooltip.attr("display", "inline")
-   
-    tooltip.exit().remove();
 }
 
 function hideTooltip(e, i){
-    svg.selectAll("text.tooltip").attr("display", "none");
+    svg.selectAll("text.tooltip").remove();
     
     d3.selectAll("circle")        
         .transition().duration(50)
@@ -195,6 +191,24 @@ function highlightSelection(selection){
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(50)
         .style("fill-opacity", 0.1);
+        
+    var tooltip = svg.selectAll("text.tooltip")
+        .data(selection[0], function(d){return d.__data__.Film;});
+    
+    var renderLeft;
+    tooltip.enter()
+        .append("text")
+        .attr("class", "tooltip")
+        .style("text-anchor", function(d) {
+            renderLeft = d.__data__.RottenTomatoes > 65;
+            return  renderLeft ? "end" : "start";
+        })
+        .attr("x", function(d) {
+            renderLeft = d.__data__.RottenTomatoes > 65;
+            return parseFloat(d3.select(d).attr("cx")) + parseFloat(d3.select(d).attr("r")) * (renderLeft ? -1 : 1);
+        })
+        .attr("y", function(d) {return parseFloat(d3.select(d).attr("cy")) + 3})
+        .text(function(d) {return d.__data__.Film;});
 }
 
 function reverseCircleOrder(){
@@ -209,6 +223,8 @@ function unhighlight(){
         .transition().duration(50)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
+        
+    svg.selectAll("text.tooltip").remove();
 }
 
 function removeAllFilms(){
