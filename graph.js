@@ -18,7 +18,7 @@ var y = d3.scale.linear()
 // bubble-scale
 var b = d3.scale.log()
     .domain([0.005, 2000])
-    .range([0, 13]);
+    .range([4, 15]);
     
 var storyColour = function(d){
     return "#" + allData.Stories[d.Story].Colour;
@@ -179,6 +179,8 @@ function hideTooltip(e, i){
         
     d3.selectAll(".film-datum")
         .text("...");
+
+    d3.select("#film-name").text("Pick a bubble");
 }
 
 function highlightYear(year){

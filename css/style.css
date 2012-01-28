@@ -55,3 +55,7 @@ div .years, .stories, .worldwide-gross {
 .film-datum {
     font-weight: normal;
 }
+
+#film-name {
+    font-weight: bold;
+}
