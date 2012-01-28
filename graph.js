@@ -97,19 +97,9 @@ function dataLoaded(data){
     allData = data;
     
     var max = d3.max(data.Films, function(d){return d.WorldwideGross;})
-    
     updateSliderMax(max);
 
     showYear(2011);
-    
-    // d3.select(".controls .well .stories")
-    // .selectAll("button")
-    // .data(d3.keys(allData.Stories))
-    // .enter()
-    // .append("button")
-    // .attr("class", "btn small")
-    // .text(function(d){return d})
-    // .style("background-color", function(d){return "#" + allData.Stories[d].Colour})
 }
 
 function renderData(data){
