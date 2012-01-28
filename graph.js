@@ -122,10 +122,7 @@ function renderData(data){
         .attr("r", 0).remove();
 }
 
-function showTooltip(e, i){
-    // console.log(e);
-    // console.log(this);
-    
+function showTooltip(e, i){    
     var circle = d3.select(this)
         .attr("class", "film highlight");
 
@@ -178,8 +175,20 @@ function hideTooltip(e, i){
 function highlightYear(year){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Year == year})
-        .attr("class", "film highlight");
-           
+
+    highlightSelection(selection);
+}
+
+function highlightStories(story){
+    var selection = d3.selectAll(".film")
+        .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()});
+    
+    highlightSelection(selection);
+}
+
+function highlightSelection(selection){
+    selection.attr("class", "film highlight");
+
     for(var i = 0; i < selection[0].length; i++)
         bubbleG.node().appendChild(selection[0][i]);
 
@@ -188,17 +197,11 @@ function highlightYear(year){
         .style("fill-opacity", 0.1);
 }
 
-function highlightStories(story){
-    var selection = d3.selectAll(".film")
-        .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()})
-        .attr("class", "film highlight");
+function reverseCircleOrder(){
+    var circles = d3.selectAll("circle");
 
-    for(var i = 0; i < selection[0].length; i++)
-        bubbleG.node().appendChild(selection[0][i]);
-
-    svg.selectAll("circle.film:not(.highlight)")
-        .transition().duration(50)
-        .style("fill-opacity", 0.1);
+    for(var i = circles[0].length - 1; i > 0; i--)
+        bubbleG.node().appendChild(circles[0][i]);
 }
 
 function unhighlight(){
@@ -206,21 +209,6 @@ function unhighlight(){
         .transition().duration(50)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
-}
-
-function removeFilmSelection(selection){
-    selection
-        .transition()
-        .duration(300)
-        .attr("r", 0);
-        //.remove();
-}
-
-function showFilmSelection(selection){
-    selection
-        .transition()
-        .duration(300)
-        .attr("r", function(d){return b(d.WorldwideGross);});
 }
 
 function removeAllFilms(){
