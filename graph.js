@@ -180,6 +180,9 @@ function highlightYear(year){
         .filter(function (d){return d.Year == year})
         .attr("class", "film highlight");
            
+    for(var i = 0; i < selection[0].length; i++)
+        bubbleG.node().appendChild(selection[0][i]);
+
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(50)
         .style("fill-opacity", 0.1);
@@ -189,6 +192,9 @@ function highlightStories(story){
     var selection = d3.selectAll(".film")
         .filter(function (d){return d.Story.toLowerCase() == story.toLowerCase()})
         .attr("class", "film highlight");
+
+    for(var i = 0; i < selection[0].length; i++)
+        bubbleG.node().appendChild(selection[0][i]);
 
     svg.selectAll("circle.film:not(.highlight)")
         .transition().duration(50)
