@@ -100,6 +100,8 @@ function dataLoaded(data){
     updateSliderMax(max);
 
     showYear(2011);
+    
+    addPopovers(data.Stories);
 }
 
 function renderData(data){

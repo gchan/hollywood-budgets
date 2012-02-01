@@ -35,6 +35,44 @@ function renderSelection(){
     
     showFiltered(years, stories, grossRange);
 }
+
+function addPopovers(stories){
+    function content(desc, e1, e2){
+        return desc + 
+            "</br></br><ul>" + 
+            "<li>" + e1 + "</li>" + 
+            "<li>" + e2 + "</li>" + 
+            "</ul>";
+    }
+    
+    function formatTitle(title, colour){
+        return "<div class='round-corners' style='background-color:#" + colour +"'></div>" +
+            title;
+    }
+
+    $('.btn.story').each(function(i, e){
+        var btn = $(e);
+        var title = btn.text();
+        var story = stories[title];
+        var colour = story.Colour;
+        var description = story.Description;
+        var example_one = story.ExampleOne;
+        var example_two = story.ExampleTwo;
+          
+        btn.popover({
+            placement: "bottom",
+            delay: {
+                show: 300,
+                hide: 50
+            },
+            title: formatTitle(title, colour),
+            content: content(description, example_one, example_two),
+            animation: false,
+            selector: false,
+            trigger: 'hover'
+        });
+    });
+}
     
 $(document).ready(function() {
 
