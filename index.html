@@ -16,28 +16,30 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="bootstrap.css" rel="stylesheet">
-    <link href="graph.css" rel="stylesheet">
-    <link href="css/twitter_bootstrap/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/graph.css" rel="stylesheet">
+    <link href="css/jquery-ui-bootstrap/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
     <link href="css/style.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
   </head>
 
   <body>
 
-    <div class="topbar">
-        <div class="fill">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
             <div class="container">
                 <a class="brand" href="#">Hollywood Budgets</a>
-                <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -45,46 +47,46 @@
     <div class="container">
         <div class="hero-unit">
             <div class="row">
-                <div class="span11 graph">
+                <div class="span8 graph">
                     <h2>Main content</h2>
                     <div id="graph"></div>
                 </div>
-            <div class="span5 controls">
+            <div class="span4 controls">
                 <div class="meta">
-                    <button class="btn small success all-years">All Years</button>
-                    <button class="btn small success all-stories">All Stories</button>
-                    <button class="btn small danger deselect-all">Deselect All</button>
+                    <a class="btn small btn-success all-years">All Years</a>
+                    <a class="btn small btn-success all-stories">All Stories</a>
+                    <a class="btn small btn-danger deselect-all">Deselect All</a>
                 </div>
                 <div class="years">
-                    <button class="btn small primary year">2011</button>
-                    <button class="btn small year">2010</button>
-                    <button class="btn small year">2009</button>
-                    <button class="btn small year">2008</button>
-                    <button class="btn small year">2007</button>
+                    <a class="btn btn-primary small year">2011</a>
+                    <a class="btn small year">2010</a>
+                    <a class="btn small year">2009</a>
+                    <a class="btn small year">2008</a>
+                    <a class="btn small year">2007</a>
                 </div>
                 <div class="stories">
-                    <button class="btn small story primary long">Temptation</button>
-                    <button class="btn small story primary short">Sacrifice</button>
-                    <button class="btn small story primary short">The Riddle</button>
-                    <button class="btn small story primary long">Transformation</button>
-                    <button class="btn small story primary short">Rescue</button>
-                    <button class="btn small story primary short">Tragedy</button>
-                    <button class="btn small story primary long">Rags To Riches</button>
-                    <button class="btn small story primary short">Love</button>
-                    <button class="btn small story primary short">Revenge</button>
-                    <button class="btn small story primary long">Metamorphosis</button>
-                    <button class="btn small story primary short">Maturation</button>
-                    <button class="btn small story primary short">Pursuit</button>
-                    <button class="btn small story primary long">Wretched Excess</button>
-                    <button class="btn small story primary short">Rivalry</button>
-                    <button class="btn small story primary short">Underdog</button>
-                    <button class="btn small story primary long">Fish Out Of Water</button>
-                    <button class="btn small story primary short">Discovery</button>
-                    <button class="btn small story primary short">Escape</button>
-                    <button class="btn small story primary short long">Monster Force</button>
-                    <button class="btn small story primary short">Comedy</button>
-                    <button class="btn small story primary short">Quest</button>
-                    <button class="btn small story primary">Journey and Return</button>
+                    <a class="btn small story btn-primary long">Temptation</a>
+                    <a class="btn small story btn-primary short">Sacrifice</a>
+                    <a class="btn small story btn-primary short">The Riddle</a>
+                    <a class="btn small story btn-primary long">Transformation</a>
+                    <a class="btn small story btn-primary short">Rescue</a>
+                    <a class="btn small story btn-primary short">Tragedy</a>
+                    <a class="btn small story btn-primary long">Rags To Riches</a>
+                    <a class="btn small story btn-primary short">Love</a>
+                    <a class="btn small story btn-primary short">Revenge</a>
+                    <a class="btn small story btn-primary long">Metamorphosis</a>
+                    <a class="btn small story btn-primary short">Maturation</a>
+                    <a class="btn small story btn-primary short">Pursuit</a>
+                    <a class="btn small story btn-primary long">Wretched Excess</a>
+                    <a class="btn small story btn-primary short">Rivalry</a>
+                    <a class="btn small story btn-primary short">Underdog</a>
+                    <a class="btn small story btn-primary long">Fish Out Of Water</a>
+                    <a class="btn small story btn-primary short">Discovery</a>
+                    <a class="btn small story btn-primary short">Escape</a>
+                    <a class="btn small story btn-primary short long">Monster Force</a>
+                    <a class="btn small story btn-primary short">Comedy</a>
+                    <a class="btn small story btn-primary short">Quest</a>
+                    <a class="btn small story btn-primary">Journey and Return</a>
                 </div>
                 <div class="worldwide-gross">
                     <div id="amount" style="border:0; font-weight:bold;">Worldwide Gross:</div>
@@ -110,6 +112,6 @@
 
     </div>
 
-    <script type="text/javascript" src="graph.js"></script>
+    <script type="text/javascript" src="js/graph.js"></script>
   </body>
 </html>

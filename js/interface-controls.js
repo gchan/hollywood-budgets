@@ -18,14 +18,14 @@ function renderSelection(){
     var stories = [];
     $(".btn.story").each(function(i, e){
         var btn = $(e);
-        if(btn.hasClass("primary"))
+        if(btn.hasClass("btn-primary"))
             stories.push(btn.text().toLowerCase());
     });
     
     var years = [];
     $(".btn.year").each(function(i, e){
         var btn = $(e);
-        if(btn.hasClass("primary"))
+        if(btn.hasClass("btn-primary"))
             years.push(parseInt(btn.text()));
     });
     
@@ -59,38 +59,38 @@ $(document).ready(function() {
 
     $('.btn.all-years').click(function(e){
         $('.btn.year').each(function(i, e){
-                $(e).addClass("primary");
+                $(e).addClass("btn-primary");
             });
         renderSelection();
     });
     
     $('.btn.all-stories').click(function(e){
         $('.btn.story').each(function(i, e){
-            $(e).addClass("primary");
+            $(e).addClass("btn-primary");
         });
         renderSelection();
     });
     
     $('.btn.deselect-all').click(function(e){
         $('.btn.year').each(function(i, e){
-            $(e).removeClass("primary");
+            $(e).removeClass("btn-primary");
         });
         $('.btn.story').each(function(i, e){
-            $(e).removeClass("primary");
+            $(e).removeClass("btn-primary");
         });
         removeAllFilms();
     });
     
     $(".btn.year").click(function(e){
         var target = $(e.target);
-        target.toggleClass("primary");
+        target.toggleClass("btn-primary");
 
         renderSelection();
     });
     
     $(".btn.story").click(function(e){
         var target = $(e.target);
-        target.toggleClass("primary");
+        target.toggleClass("btn-primary");
         
         renderSelection();
     });
@@ -98,7 +98,7 @@ $(document).ready(function() {
     $(".btn.story").hover(
         function(e){
             var btn = $(e.target);
-            if(btn.hasClass("primary"))
+            if(btn.hasClass("btn-primary"))
                 highlightStories(btn.text());
         }, 
         function(e){
@@ -109,7 +109,7 @@ $(document).ready(function() {
     $(".btn.year").hover(
         function(e){
             var btn = $(e.target);
-            if(btn.hasClass("primary"))
+            if(btn.hasClass("btn-primary"))
                 highlightYear(parseInt(btn.text()));
         }, 
         function(e){
