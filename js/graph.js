@@ -192,13 +192,13 @@ function highlightSelection(selection){
         .transition().duration(50)
         .style("fill-opacity", 0.1);
         
-    var tooltip = svg.selectAll("text.tooltip")
+    var tooltip = svg.selectAll("text.film-tooltip")
         .data(selection[0], function(d){return d.__data__.Film;});
     
     var renderLeft;
     tooltip.enter()
         .append("text")
-        .attr("class", "tooltip")
+        .attr("class", "film-tooltip")
         .style("text-anchor", function(d) {
             renderLeft = d.__data__.RottenTomatoes > 65;
             return  renderLeft ? "end" : "start";
@@ -224,7 +224,7 @@ function unhighlight(){
         .style("fill-opacity", 0.8)
         .attr("class", "film");
         
-    svg.selectAll("text.tooltip").remove();
+    svg.selectAll("text.film-tooltip").remove();
 }
 
 function removeAllFilms(){

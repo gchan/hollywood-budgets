@@ -24,9 +24,9 @@ body {
 }
 
 .row > .controls {
-    padding-left: 17px;
-    border-left: 1px solid #666;
-    margin-left: -19px; 
+    padding-left: 9px;
+    //border-left: 1px solid #666;
+    margin-left: -10px; 
 }
 
 #slider-range {
@@ -45,12 +45,9 @@ div .years, .stories, .worldwide-gross {
             min-width: 71px; 
         }
         &.long {
-        min-width: 115px; 
+            min-width: 115px; 
         } 
     }
-    &.year {
-        min-width: 50px; 
-    }     
 }
 
 .film-label {
