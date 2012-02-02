@@ -143,7 +143,11 @@ $(document).ready(function() {
         function(e){
             var btn = $(e.target);
             if(btn.hasClass("btn-primary"))
-                highlightStories(btn.text());
+                setTimeout(delayedAction, 30);
+            
+            function delayedAction(){
+                highlightStories(btn.text())
+            }
         }, 
         function(e){
             unhighlight();
@@ -154,7 +158,11 @@ $(document).ready(function() {
         function(e){
             var btn = $(e.target);
             if(btn.hasClass("btn-primary"))
+                setTimeout(delayedAction, 30);
+                
+            function delayedAction(){
                 highlightYear(parseInt(btn.text()));
+            }
         }, 
         function(e){
             unhighlight();

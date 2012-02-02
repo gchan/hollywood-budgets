@@ -116,11 +116,11 @@ function renderData(data){
         .attr("cy", function(d){return y(d.Profitability);})
         .on("mouseover", showTooltip)
         .on("mouseout", hideTooltip)
-        .transition().duration(300).delay(function(d, i) { return i * 0.5; })
+        .transition().duration(100).delay(function(d, i) { return i * 0.3; })
         .attr("r", function(d){return b(d.WorldwideGross);});
     
     bubbles.exit()
-        .transition().duration(300)
+        .transition().duration(100)
         .attr("r", 0).remove();
 }
 
@@ -211,7 +211,6 @@ function highlightSelection(selection){
         })
         .attr("x", function(d) {
             renderLeft = d.__data__.RottenTomatoes > 65;
-            console.log(d);
             return parseFloat(d3.select(d).attr("cx")) + parseFloat(b(d.__data__.WorldwideGross)) * (renderLeft ? -1 : 1);
         })
         .attr("y", function(d) {return parseFloat(d3.select(d).attr("cy")) + 3})
