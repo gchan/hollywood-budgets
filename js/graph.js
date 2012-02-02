@@ -157,7 +157,7 @@ function showTooltip(e, i){
 }
 
 function hideTooltip(e, i){
-    svg.selectAll("text.film-tooltip").remove();
+    hideAllTooltips();
     
     d3.selectAll("circle")        
         .transition().duration(50)
@@ -168,6 +168,10 @@ function hideTooltip(e, i){
         .text("...");
 
     d3.select("#film-name").text("Pick a bubble");
+}
+
+function hideAllTooltips(){
+    svg.selectAll("text.film-tooltip").remove();
 }
 
 function highlightYear(year){
@@ -207,7 +211,8 @@ function highlightSelection(selection){
         })
         .attr("x", function(d) {
             renderLeft = d.__data__.RottenTomatoes > 65;
-            return parseFloat(d3.select(d).attr("cx")) + parseFloat(d3.select(d).attr("r")) * (renderLeft ? -1 : 1);
+            console.log(d);
+            return parseFloat(d3.select(d).attr("cx")) + parseFloat(b(d.__data__.WorldwideGross)) * (renderLeft ? -1 : 1);
         })
         .attr("y", function(d) {return parseFloat(d3.select(d).attr("cy")) + 3})
         .text(function(d) {return d.__data__.Film;});
@@ -226,7 +231,7 @@ function unhighlight(){
         .style("fill-opacity", 0.8)
         .attr("class", "film");
         
-    svg.selectAll("text.film-tooltip").remove();
+    hideAllTooltips();
 }
 
 function removeAllFilms(){

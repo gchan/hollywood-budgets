@@ -124,6 +124,8 @@ $(document).ready(function() {
         target.toggleClass("btn-primary");
 
         renderSelection();
+        if(!target.hasClass("btn-primary"))
+            hideAllTooltips();
     });
     
     $(".btn.story").click(function(e){
@@ -131,6 +133,10 @@ $(document).ready(function() {
         target.toggleClass("btn-primary");
         
         renderSelection();
+        if(!target.hasClass("btn-primary"))
+            hideAllTooltips();
+        else
+            highlightStories(target.text());
     });
     
     $(".btn.story").hover(
