@@ -124,8 +124,10 @@ $(document).ready(function() {
         target.toggleClass("btn-primary");
 
         renderSelection();
-        if(!target.hasClass("btn-primary"))
+        if(!target.hasClass("btn-primary")){
             hideAllTooltips();
+            unhighlight();
+        }
     });
     
     $(".btn.story").click(function(e){
@@ -133,10 +135,12 @@ $(document).ready(function() {
         target.toggleClass("btn-primary");
         
         renderSelection();
-        if(!target.hasClass("btn-primary"))
-            hideAllTooltips();
-        else
+        if(target.hasClass("btn-primary"))
             highlightStories(target.text());
+        else{            
+            hideAllTooltips();
+            unhighlight();
+        }
     });
     
     $(".btn.story").hover(
