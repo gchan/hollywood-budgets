@@ -124,10 +124,8 @@ $(document).ready(function() {
         target.toggleClass("btn-primary");
 
         renderSelection();
-        if(!target.hasClass("btn-primary")){
+        if(!target.hasClass("btn-primary"))
             hideAllTooltips();
-            unhighlight();
-        }
     });
     
     $(".btn.story").click(function(e){
@@ -135,12 +133,10 @@ $(document).ready(function() {
         target.toggleClass("btn-primary");
         
         renderSelection();
-        if(target.hasClass("btn-primary"))
-            highlightStories(target.text());
-        else{            
+        if(!target.hasClass("btn-primary"))
             hideAllTooltips();
-            unhighlight();
-        }
+        else
+            highlightStories(target.text());
     });
     
     $(".btn.story").hover(

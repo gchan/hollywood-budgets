@@ -211,6 +211,7 @@ function highlightSelection(selection){
         })
         .attr("x", function(d) {
             renderLeft = d.__data__.RottenTomatoes > 65;
+            console.log(d);
             return parseFloat(d3.select(d).attr("cx")) + parseFloat(b(d.__data__.WorldwideGross)) * (renderLeft ? -1 : 1);
         })
         .attr("y", function(d) {return parseFloat(d3.select(d).attr("cy")) + 3})
