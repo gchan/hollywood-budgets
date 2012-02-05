@@ -3,8 +3,10 @@ var svgSize = [620, 500], // width height
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
     ty = function(d) { return "translate(0," + y(d) + ")"; },
-    stroke = function(d) { return d ? "#ccc" : "#666"; };
+    stroke = function(d) { return d ? "#ccc" : "#ccc"; };
 
+var renderedData;
+    
 // x-scale
 var x = d3.scale.linear()
     .domain([0, 103])
@@ -12,7 +14,7 @@ var x = d3.scale.linear()
 
 // y-scale
 var y = d3.scale.linear()
-    .domain([1500, 0])
+    .domain([1500, -20])
     .range([0, size[1]]);
     
 // bubble-scale
@@ -29,8 +31,17 @@ var svg = d3.select("div#graph").append("svg")
     .attr("height", size[1] + padding[0] + padding[2])
     .attr("pointer-events", "all")
 	.append("g")
-    .attr("transform", "translate(" + padding[3] + "," + padding[0] + ")");
+    .attr("transform", "translate(" + padding[3] + "," + padding[0] + ")")    
+    .call(d3.behavior.zoom()
+        .extent([[0, size[0]], [0, size[1]], [0, 1.5]])
+        .on("zoom", redraw));
 
+svg.append("rect")
+    .attr("width", size[0])
+    .attr("height", size[1])
+    .attr("stroke", "none")
+    .style("fill", "#fff")
+    .style("opacity", 0);
 
 var fx = x.tickFormat(10),
     fy = y.tickFormat(10);
@@ -105,14 +116,17 @@ function dataLoaded(data){
 }
 
 function renderData(data){
+    renderedData = data;
+    
     var bubbles = bubbleG.selectAll("circle")
         .data(data, function(d) { return d.Film; });
         
     bubbles.enter()
         .append("circle")
         .attr("class", "film")
-        .attr("fill", storyColour)
-        .attr("cx", function(d){return x(d.RottenTomatoes);})
+        .attr("fill", storyColour);
+        
+    bubbles.attr("cx", function(d){return x(d.RottenTomatoes);})
         .attr("cy", function(d){return y(d.Profitability);})
         .on("mouseover", showTooltip)
         .on("mouseout", hideTooltip)
@@ -263,4 +277,67 @@ function showFiltered(years, stories, grossRange){
         .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
 
     renderData(filteredData);
+}
+
+function redraw() {
+  d3.event.transform(x, y);
+
+  var fx = x.tickFormat(10),
+      fy = y.tickFormat(10);
+
+  // Regenerate x-ticks…
+  var xTicks = d3.select("g.xTicks");
+  
+  var gx = xTicks.selectAll("g.x")
+      .data(x.ticks(10), String)
+      .attr("transform", tx);
+
+  gx.select("text")
+      .text(fx);
+
+  var gxe = gx.enter().insert("g", "a")
+      .attr("class", "x")
+      .attr("transform", tx);
+
+  gxe.append("line")
+      .attr("stroke", stroke)
+      .attr("y1", 0)
+      .attr("y2", size[1]);
+
+  gxe.append("text")
+      .attr("y", size[1])
+      .attr("dy", "1em")
+      .attr("text-anchor", "middle")
+      .text(fx);
+
+  gx.exit().remove();
+
+  // Regenerate y-ticks…
+  var yTicks = d3.select("g.yTicks");
+
+  var gy = yTicks.selectAll("g.y")
+      .data(y.ticks(10), String)
+      .attr("transform", ty);
+
+  gy.select("text")
+      .text(fy);
+
+  var gye = gy.enter().insert("g", "a")
+      .attr("class", "y")
+      .attr("transform", ty);
+
+  gye.append("line")
+      .attr("stroke", stroke)
+      .attr("x1", 0)
+      .attr("x2", size[0]);
+
+  gye.append("text")
+      .attr("x", -3)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "end")
+      .text(fy);
+
+  gy.exit().remove();
+  
+  renderData(renderedData);
 }
