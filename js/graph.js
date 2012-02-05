@@ -34,7 +34,7 @@ var svg = d3.select("div#graph").append("svg")
     .attr("transform", "translate(" + padding[3] + "," + padding[0] + ")")    
     .call(d3.behavior.zoom()
         .extent([[0, size[0]], [0, size[1]], [0, 1.5]])
-        .on("zoom", redraw));
+        .on("zoom", renderAxes));
 
 svg.append("rect")
     .attr("width", size[0])
@@ -43,66 +43,84 @@ svg.append("rect")
     .style("fill", "#fff")
     .style("opacity", 0);
 
-var fx = x.tickFormat(10),
-    fy = y.tickFormat(10);
-
-// x-ticks
 var xTicks = svg.append("g")
     .attr("class", "xTicks");
     
-var gx = xTicks.selectAll("g.x")
-  .data(x.ticks(10), String)
-  .attr("transform", tx);
-
-var gxe = gx.enter().insert("g", "a")
-  .attr("class", "x")
-  .attr("transform", tx);
-
-gxe.append("line")
-  .attr("stroke", stroke)
-  .attr("y1", 0)
-  .attr("y2", size[1]);
-
-gxe.append("text")
-  .attr("y", size[1])
-  .attr("dy", "1em")
-  .attr("text-anchor", "middle")
-  .text(fx);
-
-gx.exit().remove();
-
-// y-ticks
 var yTicks = svg.append("g")
     .attr("class", "yTicks");
-
-var gy = yTicks.selectAll("g.y")
-  .data(y.ticks(10), String)
-  .attr("transform", ty);
-
-gy.select("text")
-  .text(fy);
-
-var gye = gy.enter().insert("g", "a")
-  .attr("class", "y")
-  .attr("transform", ty);
-
-gye.append("line")
-  .attr("stroke", stroke)
-  .attr("x1", 0)
-  .attr("x2", size[0]);
-
-gye.append("text")
-  .attr("x", -3)
-  .attr("dy", ".35em")
-  .attr("text-anchor", "end")
-  .text(fy);
-
-gy.exit().remove();
 
 var bubbleG = svg.append("g")
     .attr("class", "bubbles");
 
+renderAxes();
+
 d3.json("data/data.json", dataLoaded);
+
+function setYMax(yMax){
+    y.domain([yMax, -20]);
+    renderAxes();
+}
+
+function renderAxes() {
+    if(d3.event)
+        d3.event.transform(x, y);
+
+    var fx = x.tickFormat(10),
+        fy = y.tickFormat(10);
+
+    // x-ticks
+    var gx = xTicks.selectAll("g.x")
+        .data(x.ticks(5), String)
+        .attr("transform", tx);
+
+    gx.select("text")
+        .text(fx);
+
+    var gxe = gx.enter().insert("g", "a")
+        .attr("class", "x")
+        .attr("transform", tx);
+
+    gxe.append("line")
+        .attr("stroke", stroke)
+        .attr("y1", 0)
+        .attr("y2", size[1]);
+
+    gxe.append("text")
+        .attr("y", size[1])
+        .attr("dy", "1em")
+        .attr("text-anchor", "middle")
+        .text(fx);
+
+    gx.exit().remove();
+
+    // y-ticks
+    var gy = yTicks.selectAll("g.y")
+        .data(y.ticks(6), String)
+        .attr("transform", ty);
+
+    gy.select("text")
+        .text(fy);
+
+    var gye = gy.enter().insert("g", "a")
+        .attr("class", "y")
+        .attr("transform", ty);
+
+    gye.append("line")
+        .attr("stroke", stroke)
+        .attr("x1", 0)
+        .attr("x2", size[0]);
+
+    gye.append("text")
+        .attr("x", -3)
+        .attr("dy", ".35em")
+        .attr("text-anchor", "end")
+        .text(fy);
+
+    gy.exit().remove();
+
+    if(renderedData)
+        renderData(renderedData);
+}
 
 function dataLoaded(data){
     allData = data;
@@ -277,67 +295,4 @@ function showFiltered(years, stories, grossRange){
         .sort(function (a,b){return b.WorldwideGross - a.WorldwideGross;});
 
     renderData(filteredData);
-}
-
-function redraw() {
-  d3.event.transform(x, y);
-
-  var fx = x.tickFormat(10),
-      fy = y.tickFormat(10);
-
-  // Regenerate x-ticks…
-  var xTicks = d3.select("g.xTicks");
-  
-  var gx = xTicks.selectAll("g.x")
-      .data(x.ticks(10), String)
-      .attr("transform", tx);
-
-  gx.select("text")
-      .text(fx);
-
-  var gxe = gx.enter().insert("g", "a")
-      .attr("class", "x")
-      .attr("transform", tx);
-
-  gxe.append("line")
-      .attr("stroke", stroke)
-      .attr("y1", 0)
-      .attr("y2", size[1]);
-
-  gxe.append("text")
-      .attr("y", size[1])
-      .attr("dy", "1em")
-      .attr("text-anchor", "middle")
-      .text(fx);
-
-  gx.exit().remove();
-
-  // Regenerate y-ticks…
-  var yTicks = d3.select("g.yTicks");
-
-  var gy = yTicks.selectAll("g.y")
-      .data(y.ticks(10), String)
-      .attr("transform", ty);
-
-  gy.select("text")
-      .text(fy);
-
-  var gye = gy.enter().insert("g", "a")
-      .attr("class", "y")
-      .attr("transform", ty);
-
-  gye.append("line")
-      .attr("stroke", stroke)
-      .attr("x1", 0)
-      .attr("x2", size[0]);
-
-  gye.append("text")
-      .attr("x", -3)
-      .attr("dy", ".35em")
-      .attr("text-anchor", "end")
-      .text(fy);
-
-  gy.exit().remove();
-  
-  renderData(renderedData);
 }
