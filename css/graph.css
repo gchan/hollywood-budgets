@@ -10,5 +10,6 @@ div#graph svg {
   div#graph svg rect.background {
     fill: #F0ECEC; }
   div#graph svg text.film-tooltip {
-    font-size: 10px;
     font-weight: bold; }
+  div#graph svg text.yLabel, div#graph svg text.xLabel {
+    font-size: 12px; }

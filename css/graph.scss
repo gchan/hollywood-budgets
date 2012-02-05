@@ -12,8 +12,12 @@ div#graph svg {
     rect.background {
         fill: #F0ECEC;
     }
-    text.film-tooltip {
-        font-size: 10px;
-        font-weight: bold;
+    text {
+        &.film-tooltip {
+            font-weight: bold;
+        }
+        &.yLabel, &.xLabel {
+            font-size: 12px;
+        }
     }
 }

@@ -1,5 +1,5 @@
-var svgSize = [620, 500], // width height
-    padding = [4, 20, 20, 30], // top right bottom left
+var svgSize = [620, 520], // width height
+    padding = [4, 20, 35, 45], // top right bottom left
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
     ty = function(d) { return "translate(0," + y(d) + ")"; },
@@ -43,6 +43,21 @@ svg.append("rect")
     .style("fill", "#fff")
     .style("opacity", 0);
 
+svg.append("text")
+    .attr("class", "xLabel")
+    .attr("x", size[0]/2)
+    .attr("y", svgSize[1])
+    .attr("dy", "-1em")
+    .attr("text-anchor", "middle")
+    .text("Rotten Tomatoes Score (%)");
+
+svg.append("text")
+    .attr("class", "yLabel")
+    .attr("x", -padding[3] + 10)
+    .attr("y", svgSize[0]/2)
+    .attr("transform", "rotate(-90, " + (-padding[3] + 10) + ", " + svgSize[0]/2 + ")")
+    .text("Profitability (%)");
+    
 var xTicks = svg.append("g")
     .attr("class", "xTicks");
     
