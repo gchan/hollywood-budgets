@@ -25,15 +25,19 @@ body {
 #slider-range {
   margin: 3px 10px; }
 
-div .years, .stories, .worldwide-gross {
-  margin-right: 9px; }
+div.worldwide-gross {
+  margin-right: 9px;
+  margin-top: 8px;
+  margin-bottom: 10px; }
 
 .btn.story {
-  margin-bottom: 3px; }
+  margin-bottom: 1px; }
   .btn.story.short {
-    min-width: 71px; }
+    min-width: 82px; }
   .btn.story.long {
-    min-width: 115px; }
+    min-width: 127px; }
+  .btn.story.super-long {
+    min-width: 290px; }
 
 .film-label {
   font-weight: bold; }

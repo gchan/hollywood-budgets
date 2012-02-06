@@ -1911,7 +1911,7 @@ button.btn.small, input[type="submit"].btn.small {
   *margin-left: 0;
 }
 .btn-group + .btn-group {
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 .btn-toolbar {
   margin-top: 9px;

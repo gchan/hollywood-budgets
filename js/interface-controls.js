@@ -143,7 +143,7 @@ $(document).ready(function() {
         function(e){
             var btn = $(e.target);
             if(btn.hasClass("btn-primary"))
-                setTimeout(delayedAction, 30);
+                setTimeout(delayedAction, 0);
             
             function delayedAction(){
                 highlightStories(btn.text())
@@ -158,7 +158,7 @@ $(document).ready(function() {
         function(e){
             var btn = $(e.target);
             if(btn.hasClass("btn-primary"))
-                setTimeout(delayedAction, 30);
+                setTimeout(delayedAction, 0);
                 
             function delayedAction(){
                 highlightYear(parseInt(btn.text()));

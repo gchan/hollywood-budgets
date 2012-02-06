@@ -33,20 +33,24 @@ body {
     margin: 3px 10px; 
 }
 
-div .years, .stories, .worldwide-gross {
-    //padding: 10px 5px 3px 0px;
-    margin-right: 9px; 
+div.worldwide-gross {
+    margin-right: 9px;
+    margin-top: 8px;
+    margin-bottom: 10px;
 }
 
 .btn {
     &.story {
-        margin-bottom: 3px;
+        margin-bottom: 1px;
         &.short {
-            min-width: 71px; 
+            min-width: 82px; 
         }
         &.long {
-            min-width: 115px; 
-        } 
+            min-width: 127px; 
+        }
+        &.super-long {
+            min-width: 290px; 
+        }
     }
 }
 
