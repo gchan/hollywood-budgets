@@ -1,4 +1,4 @@
-var svgSize = [620, 520], // width height
+var svgSize = [620, 700], // width height
     padding = [4, 20, 35, 45], // top right bottom left
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
@@ -13,8 +13,8 @@ var x = d3.scale.linear()
     .range([0, size[0]]);
 
 // y-scale
-var y = d3.scale.linear()
-    .domain([1500, -20])
+var y = d3.scale.sqrt()
+    .domain([7000, 0])
     .range([0, size[1]]);
     
 // bubble-scale
@@ -150,7 +150,7 @@ function dataLoaded(data){
 
 function renderData(data){
     renderedData = data;
-    
+
     var bubbles = bubbleG.selectAll("circle")
         .data(data, function(d) { return d.Film; });
         
