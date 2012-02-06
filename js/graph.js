@@ -1,5 +1,5 @@
 var svgSize = [620, 700], // width height
-    padding = [4, 20, 35, 45], // top right bottom left
+    padding = [4, 20, 40, 55], // top right bottom left
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
     ty = function(d) { return "translate(0," + y(d) + ")"; },
@@ -162,11 +162,11 @@ function renderData(data){
         .attr("cy", function(d){return y(d.Profitability);})
         .on("mouseover", showTooltip)
         .on("mouseout", hideTooltip)
-        .transition().duration(100).delay(function(d, i) { return i * 0.3; })
+        // .transition().duration(100).delay(function(d, i) { return i * 0.3; })
         .attr("r", function(d){return b(d.WorldwideGross);});
     
     bubbles.exit()
-        .transition().duration(100)
+        // .transition().duration(100)
         .attr("r", 0).remove();
 }
 
@@ -241,7 +241,7 @@ function highlightSelection(selection){
         bubbleG.node().appendChild(selection[0][i]);
 
     svg.selectAll("circle.film:not(.highlight)")
-        .transition().duration(50)
+        // .transition().duration(50)
         .style("fill-opacity", 0.1);
         
     var tooltip = svg.selectAll("text.film-tooltip")
@@ -272,7 +272,7 @@ function reverseCircleOrder(){
 
 function unhighlight(){
     d3.selectAll("circle.film")
-        .transition().duration(50)
+        // .transition().duration(50)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
         
