@@ -10,16 +10,21 @@ body {
   text-align: center;
   /* center align it with the container */ }
 .container > .hero-unit {
+  background-image: url("../img/white_texture.png");
   padding: 20px 0 20px 20px; }
+
+footer {
+  padding-top: 18px;
+  margin-top: 18px;
+  border-top: 1px solid #EEE; }
 
 .row > .controls {
   padding-left: 18px;
   border-left: 1px solid #dddddd;
   margin-left: -28px;
-  min-height: 600px; }
-
-#slider-range {
-  margin: 3px 10px; }
+  min-height: 620px; }
+  .row > .controls #slider-range {
+    margin: 3px 10px; }
 
 div#alert-help {
   color: black;
@@ -28,7 +33,6 @@ div#alert-help {
 
 div.worldwide-gross {
   margin-right: 9px;
-  margin-top: 8px;
   margin-bottom: 10px; }
 
 .btn.story {
@@ -42,17 +46,20 @@ div.worldwide-gross {
 .btn.year {
   min-width: 59px; }
 
+div.stories {
+  padding-bottom: 20px; }
+
 div.meta .btn {
   min-width: 95px; }
 
-.film-label {
-  font-weight: bold; }
-
-.film-datum {
-  font-weight: normal; }
-
-#film-name {
-  font-weight: bold; }
+div.film-details {
+  padding-bottom: 10px; }
+  div.film-details .film-label {
+    font-weight: bold; }
+  div.film-details .film-datum {
+    font-weight: normal; }
+  div.film-details #film-name {
+    font-weight: bold; }
 
 .round-corners {
   float: left;
