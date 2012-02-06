@@ -29,16 +29,14 @@
   </head>
 
   <body>
-
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand" href="#">Hollywood Budgets</a>
                 <div class="nav-collapse">
                     <ul class="nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" onclick='$("#alert-help").fadeIn("slow");'>What is this?</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,12 +44,43 @@
     </div>
 
     <div class="container">
-        <div class="hero-unit">
+        <div class="hero-unit">                
+            <div class="row">
+                <div id="alert-help" class="alert alert-info alert-block fade in">
+                    <a class="close" href="#" onclick='$("#alert-help").fadeOut("slow");'>&times</a>
+                    <strong><big>What is this? </big></strong>
+                    <div style="line-height: 4px">&nbsp;</div>
+                    <ul>
+                        <li>
+                            Each <strong>bubble</strong> is a <em>hollywod film</em>.
+                            The <strong>x</strong>, <strong>y</strong> and <strong>size</strong> of the bubbles 
+                            represent <em>critics score</em>, <em>profitability</em> and <em>worldwide gross</em>, respectively.
+                        </li>
+                        <!-- <li>
+                          The data is from 1995 to 2010. Use the <strong>slider</strong>, <strong>previous</strong> and <strong>next</strong> buttons below to change the year 
+                          or click <strong>play</strong> to show animation.
+                        </li>
+                        <li>
+                        Move cursor over a <strong>country flag</strong> or <strong>bubble</strong> for more detail. The <strong>highlighted path</strong> is data of the selected country from all years. 
+                        </li> -->
+                    </ul> 
+                </div>
+            </div>
             <div class="row">
                 <div class="span8 graph">
                     <div id="graph"></div>
                 </div>
             <div class="span4 controls">
+                <div class="film-details">
+                    <div class="film-label"><span class="film-datum" id="film-name">Pick a bubble</span></div>
+                    <div class="film-label">Year: <span class="film-datum" id="film-year"></span></div>
+                    <div class="film-label">Story: <span class="film-datum" id="film-story"></span></div>
+                    <div class="film-label">Genre: <span class="film-datum" id="film-genre"></span></div>
+                    <div class="film-label">Rating: <span class="film-datum" id="film-rating"></span></div>
+                    <div class="film-label">Profitability: <span class="film-datum" id="film-profitability"></span></div>
+                    <div class="film-label">Gross: <span class="film-datum" id="film-gross"></span></div>
+                    <div class="film-label">Budget: <span class="film-datum" id="film-budget"></span></div>
+                </div>
                 <div class="meta btn-toolbar">
                     <button class="btn btn-success all-years">All Years</button>
                     <button class="btn btn-success all-stories">All Stories</button>
@@ -107,16 +136,6 @@
                 <div class="worldwide-gross">
                     <div id="amount" style="border:0; font-weight:bold;">Worldwide Gross:</div>
                     <div id="slider-range"></div>
-                </div>
-                <div class="film-details">
-                    <div class="film-label"><span class="film-datum" id="film-name">Pick a bubble</span></div>
-                    <div class="film-label">Year: <span class="film-datum" id="film-year"></span></div>
-                    <div class="film-label">Story: <span class="film-datum" id="film-story"></span></div>
-                    <div class="film-label">Genre: <span class="film-datum" id="film-genre"></span></div>
-                    <div class="film-label">Rating: <span class="film-datum" id="film-rating"></span></div>
-                    <div class="film-label">Profitability: <span class="film-datum" id="film-profitability"></span></div>
-                    <div class="film-label">Gross: <span class="film-datum" id="film-gross"></span></div>
-                    <div class="film-label">Budget: <span class="film-datum" id="film-budget"></span></div>
                 </div>
             </div>
         </div>

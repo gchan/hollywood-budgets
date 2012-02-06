@@ -1915,7 +1915,7 @@ button.btn.small, input[type="submit"].btn.small {
 }
 .btn-toolbar {
   margin-top: 9px;
-  margin-bottom: 9px;
+  margin-bottom: 13px;
 }
 .btn-toolbar .btn-group {
   display: inline-block;

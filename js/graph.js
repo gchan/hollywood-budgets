@@ -1,5 +1,5 @@
-var svgSize = [620, 700], // width height
-    padding = [4, 20, 40, 55], // top right bottom left
+var svgSize = [580, 700], // width height
+    padding = [4, 10, 40, 55], // top right bottom left
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
     ty = function(d) { return "translate(0," + y(d) + ")"; },
@@ -9,7 +9,7 @@ var renderedData;
     
 // x-scale
 var x = d3.scale.linear()
-    .domain([0, 103])
+    .domain([0, 101])
     .range([0, size[0]]);
 
 // y-scale
@@ -71,7 +71,9 @@ renderAxes();
 d3.json("data/data.json", dataLoaded);
 
 function setYMax(yMax){
-    y.domain([yMax, -20]);
+    y.domain([yMax, 0]);
+    x.domain([0, 101]);
+
     renderAxes();
 }
 
@@ -109,7 +111,7 @@ function renderAxes() {
 
     // y-ticks
     var gy = yTicks.selectAll("g.y")
-        .data(y.ticks(6), String)
+        .data(y.ticks(11), String)
         .attr("transform", ty);
 
     gy.select("text")
