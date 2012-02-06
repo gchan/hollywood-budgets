@@ -3,7 +3,7 @@ var svgSize = [620, 700], // width height
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
     ty = function(d) { return "translate(0," + y(d) + ")"; },
-    stroke = function(d) { return d ? "#ccc" : "#ccc"; };
+    stroke = function(d) { return d ? "#ccc" : "transparent"; };
 
 var renderedData;
     
@@ -13,7 +13,7 @@ var x = d3.scale.linear()
     .range([0, size[0]]);
 
 // y-scale
-var y = d3.scale.sqrt()
+var y = d3.scale.pow().exponent(.25)
     .domain([7000, 0])
     .range([0, size[1]]);
     
@@ -40,8 +40,7 @@ svg.append("rect")
     .attr("width", size[0])
     .attr("height", size[1])
     .attr("stroke", "none")
-    .style("fill", "#fff")
-    .style("opacity", 0);
+    .style("fill", "transparent");
 
 svg.append("text")
     .attr("class", "xLabel")
