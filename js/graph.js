@@ -1,4 +1,4 @@
-var svgSize = [580, 700], // width height
+var svgSize = [580, 620], // width height
     padding = [4, 10, 40, 55], // top right bottom left
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },
@@ -18,7 +18,7 @@ var y = d3.scale.pow().exponent(.25)
     .range([0, size[1]]);
     
 // bubble-scale
-var b = d3.scale.log()
+var b = d3.scale.pow().exponent(.2)
     .domain([0.005, 2000])
     .range([4, 15]);
     
@@ -165,7 +165,7 @@ function renderData(data){
         .on("mouseover", showTooltip)
         .on("mouseout", hideTooltip)
         // .transition().duration(100).delay(function(d, i) { return i * 0.3; })
-        .attr("r", function(d){return b(d.WorldwideGross);});
+        .attr("r", function(d){return b(d.WorldwideGross) * 1.5;});
     
     bubbles.exit()
         // .transition().duration(100)
