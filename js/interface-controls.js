@@ -72,6 +72,29 @@ function addPopovers(stories){
             trigger: 'hover'
         });
     });
+    
+    $('div.stories-legend table td').each(function(i, e){
+        var td = $(e);
+        var title = td.text();
+        var story = stories[title];
+        var colour = story.Colour;
+        var description = story.Description;
+        var example_one = story.ExampleOne;
+        var example_two = story.ExampleTwo;
+          
+        td.popover({
+            placement: "bottom",
+            delay: {
+                show: 300,
+                hide: 50
+            },
+            title: formatTitle(title, colour),
+            content: content(description, example_one, example_two),
+            animation: false,
+            selector: false,
+            trigger: 'hover'
+        });
+    });
 }
     
 $(document).ready(function() {
@@ -147,6 +170,20 @@ $(document).ready(function() {
             
             function delayedAction(){
                 highlightStories(btn.text())
+            }
+        }, 
+        function(e){
+            unhighlight();
+        }
+    );
+    
+    $("div.stories-legend table td").hover(
+        function(e){
+            var td = $(e.target);
+            setTimeout(delayedAction, 0);
+            
+            function delayedAction(){
+                highlightStories(td.text())
             }
         }, 
         function(e){
