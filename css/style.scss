@@ -35,13 +35,15 @@ footer {
 }
 
 div.stories-legend {
+    width: 95%;
     margin-top: 10px;
     padding: 10px;
+    
     border: 1px solid #DDD;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    width: 95%;
+
     table {
         margin-bottom: 0px;
         td {
@@ -50,7 +52,25 @@ div.stories-legend {
         }
     }
 }
+   
+div.stories-header {
+    padding-left: 8px;
+    padding-top: 12px;
+    margin-top: 10px;
+    border-top: 1px solid #DDD;
+    width: 96%;
 
+    span.twentytwo-stories {
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    
+    em.instruction {
+        margin-right: 10px;
+    }
+}
+    
 div#alert-help {
     color: black;
     margin-left: 20px;
