@@ -92,7 +92,8 @@ function addPopovers(stories){
             content: content(description, example_one, example_two),
             animation: false,
             selector: false,
-            trigger: 'hover'
+            trigger: 'hover',
+            placement: (i + 1) % 5 == 0 ? 'left' : 'right'
         });
     });
 }
