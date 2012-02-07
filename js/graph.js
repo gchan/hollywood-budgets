@@ -80,7 +80,7 @@ function setYMax(yMax){
 function renderAxes() {
     if(d3.event)
         d3.event.transform(x, y);
-
+              
     var fx = x.tickFormat(10),
         fy = y.tickFormat(10);
 
@@ -179,7 +179,7 @@ function showTooltip(e, i){
     bubbleG.node().appendChild(circle.node());
 
     svg.selectAll("circle.film:not(.highlight)")
-        .transition().duration(150)
+        // .transition().duration(150)
         .style("fill-opacity", 0.1);
 
     var tooltip = svg.selectAll("text.film-tooltip")
@@ -208,7 +208,7 @@ function hideTooltip(e, i){
     hideAllTooltips();
     
     d3.selectAll("circle")        
-        .transition().duration(50)
+        // .transition().duration(50)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
         
@@ -259,7 +259,7 @@ function highlightSelection(selection){
         })
         .attr("x", function(d) {
             renderLeft = d.__data__.RottenTomatoes > 65;
-            return parseFloat(d3.select(d).attr("cx")) + parseFloat(b(d.__data__.WorldwideGross)) * (renderLeft ? -1 : 1);
+            return parseFloat(d3.select(d).attr("cx")) + parseFloat(b(d.__data__.WorldwideGross) * 1.5) * (renderLeft ? -1 : 1);
         })
         .attr("y", function(d) {return parseFloat(d3.select(d).attr("cy")) + 3})
         .text(function(d) {return d.__data__.Film;});
