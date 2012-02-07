@@ -30,6 +30,9 @@ div.stories-legend {
   margin-top: 10px;
   padding: 10px;
   border: 1px solid #DDD;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
   width: 95%; }
   div.stories-legend table {
     margin-bottom: 0px; }
