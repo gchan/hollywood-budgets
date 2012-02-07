@@ -26,6 +26,17 @@ footer {
   .row > .controls #slider-range {
     margin: 3px 10px; }
 
+div.stories-legend {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #DDD;
+  width: 95%; }
+  div.stories-legend table {
+    margin-bottom: 0px; }
+    div.stories-legend table td {
+      width: 20%;
+      border-top: 0px; }
+
 div#alert-help {
   color: black;
   margin-left: 20px;

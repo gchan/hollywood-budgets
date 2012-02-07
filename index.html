@@ -76,78 +76,116 @@
                 <div class="span8 graph">
                     <div id="graph"></div>
                 </div>
-            <div class="span4 controls">
-                <div class="film-details">
-                    <div class="film-label"><span class="film-datum" id="film-name">Pick a bubble</span></div>
-                    <div class="film-label">Year: <span class="film-datum" id="film-year"></span></div>
-                    <div class="film-label">Story: <span class="film-datum" id="film-story"></span></div>
-                    <div class="film-label">Genre: <span class="film-datum" id="film-genre"></span></div>
-                    <div class="film-label">Rating: <span class="film-datum" id="film-rating"></span></div>
-                    <div class="film-label">Profitability: <span class="film-datum" id="film-profitability"></span></div>
-                    <div class="film-label">Gross: <span class="film-datum" id="film-gross"></span></div>
-                    <div class="film-label">Budget: <span class="film-datum" id="film-budget"></span></div>
-                </div>
-                <div class="meta btn-toolbar">
-                    <button class="btn btn-success all-years">All Years</button>
-                    <button class="btn btn-success all-stories">All Stories</button>
-                    <button class="btn btn-danger deselect-all">Deselect All</button>
-                </div>
-                <div class="btn-toolbar">
-                    <h5>Filter by Year</h5>
-                    <div class="btn-group">
-                        <button class="btn btn-primary year">2011</button>
-                        <button class="btn year">2010</button>
-                        <button class="btn year">2009</button>
-                        <button class="btn year">2008</button>
-                        <button class="btn year">2007</button>
+                <div class="span4 controls">
+                    <div class="film-details">
+                        <div class="film-label"><span class="film-datum" id="film-name">Pick a bubble</span></div>
+                        <div class="film-label">Year: <span class="film-datum" id="film-year"></span></div>
+                        <div class="film-label">Story: <span class="film-datum" id="film-story"></span></div>
+                        <div class="film-label">Genre: <span class="film-datum" id="film-genre"></span></div>
+                        <div class="film-label">Rating: <span class="film-datum" id="film-rating"></span></div>
+                        <div class="film-label">Profitability: <span class="film-datum" id="film-profitability"></span></div>
+                        <div class="film-label">Gross: <span class="film-datum" id="film-gross"></span></div>
+                        <div class="film-label">Budget: <span class="film-datum" id="film-budget"></span></div>
                     </div>
-                </div>
-                <div class="stories">
-                    <h5>Filter by Story</h5>
-                    <div class="btn-group">
-                        <button class="btn story btn-primary long">Temptation</button>
-                        <button class="btn story btn-primary short">Sacrifice</button>
-                        <button class="btn story btn-primary short">The Riddle</button>
+                    <div class="meta btn-toolbar">
+                        <button class="btn btn-success all-years">All Years</button>
+                        <button class="btn btn-success all-stories">All Stories</button>
+                        <button class="btn btn-danger deselect-all">Deselect All</button>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn story btn-primary long">Transformation</button>
-                        <button class="btn story btn-primary short">Rescue</button>
-                        <button class="btn story btn-primary short">Tragedy</button>
+                    <div class="btn-toolbar">
+                        <h5>Filter by Year</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-primary year">2011</button>
+                            <button class="btn year">2010</button>
+                            <button class="btn year">2009</button>
+                            <button class="btn year">2008</button>
+                            <button class="btn year">2007</button>
+                        </div>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn story btn-primary long">Rags To Riches</button>
-                        <button class="btn story btn-primary short">Love</button>
-                        <button class="btn story btn-primary short">Revenge</button>                    
+                    <div class="stories">
+                        <h5>Filter by Story</h5>
+                        <div class="btn-group">
+                            <button class="btn story btn-primary long">Temptation</button>
+                            <button class="btn story btn-primary short">Sacrifice</button>
+                            <button class="btn story btn-primary short">The Riddle</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn story btn-primary long">Transformation</button>
+                            <button class="btn story btn-primary short">Rescue</button>
+                            <button class="btn story btn-primary short">Tragedy</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn story btn-primary long">Rags To Riches</button>
+                            <button class="btn story btn-primary short">Love</button>
+                            <button class="btn story btn-primary short">Revenge</button>                    
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn story btn-primary long">Metamorphosis</button>
+                            <button class="btn story btn-primary short">Maturation</button>
+                            <button class="btn story btn-primary short">Pursuit</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn story btn-primary long">Wretched Excess</button>
+                            <button class="btn story btn-primary short">Rivalry</button>
+                            <button class="btn story btn-primary short">Underdog</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn story btn-primary long">Fish Out Of Water</button>
+                            <button class="btn story btn-primary short">Discovery</button>
+                            <button class="btn story btn-primary short">Escape</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn story btn-primary long">Monster Force</button>
+                            <button class="btn story btn-primary short">Comedy</button>
+                            <button class="btn story btn-primary short">Quest</button>
+                        </div>
+                        <button class="btn story btn-primary super-long">Journey and Return</button>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn story btn-primary long">Metamorphosis</button>
-                        <button class="btn story btn-primary short">Maturation</button>
-                        <button class="btn story btn-primary short">Pursuit</button>
+                    <div class="worldwide-gross">
+                        <div id="amount" style="border:0; font-weight:bold;">Worldwide Gross:</div>
+                        <div id="slider-range"></div>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn story btn-primary long">Wretched Excess</button>
-                        <button class="btn story btn-primary short">Rivalry</button>
-                        <button class="btn story btn-primary short">Underdog</button>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn story btn-primary long">Fish Out Of Water</button>
-                        <button class="btn story btn-primary short">Discovery</button>
-                        <button class="btn story btn-primary short">Escape</button>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn story btn-primary long">Monster Force</button>
-                        <button class="btn story btn-primary short">Comedy</button>
-                        <button class="btn story btn-primary short">Quest</button>
-                    </div>
-                    <button class="btn story btn-primary super-long">Journey and Return</button>
-                </div>
-                <div class="worldwide-gross">
-                    <div id="amount" style="border:0; font-weight:bold;">Worldwide Gross:</div>
-                    <div id="slider-range"></div>
                 </div>
             </div>
-        </div>
-        </div>
+            <div class="stories-legend">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><div class='round-corners' style='background-color:#DCA590'></div>Temptation</td>
+                            <td><div class='round-corners' style='background-color:#763294'></div>Sacrifice</td>
+                            <td><div class='round-corners' style='background-color:#A7D4CD'></div>The Riddle</td>
+                            <td><div class='round-corners' style='background-color:#B8A231'></div>Transformation</td>
+                            <td><div class='round-corners' style='background-color:#57585A'></div>Rescue</td>
+                        </tr>
+                        <tr>
+                            <td><div class='round-corners' style='background-color:#C0852B'></div>Tragedy</td>
+                            <td><div class='round-corners' style='background-color:#4052A3'></div>Rags To Riches</td>
+                            <td><div class='round-corners' style='background-color:#A0D097'></div>Love</td>
+                            <td><div class='round-corners' style='background-color:#81C040'></div>Revenge</td>
+                            <td><div class='round-corners' style='background-color:#57585A'></div>Metamorphosis</td>
+                        </tr>
+                        <tr>
+                            <td><div class='round-corners' style='background-color:#D74E2A'></div>Maturation</td>
+                            <td><div class='round-corners' style='background-color:#B25F9F'></div>Pursuit</td>
+                            <td><div class='round-corners' style='background-color:#6C6D70'></div>Wretched Excess</td>
+                            <td><div class='round-corners' style='background-color:#50B65A'></div>Rivalry</td>
+                            <td><div class='round-corners' style='background-color:#A32921'></div>Underdog</td>
+                        </tr>
+                        <tr>
+                            <td><div class='round-corners' style='background-color:#DDD3B3'></div>Fish Out Of Water</td>
+                            <td><div class='round-corners' style='background-color:#8E5B24'></div>Discovery</td>
+                            <td><div class='round-corners' style='background-color:#911566'></div>Escape</td>
+                            <td><div class='round-corners' style='background-color:#EE2324'></div>Monster Force</td>
+                            <td><div class='round-corners' style='background-color:#23B1A8'></div>Comedy</td>
+                        </tr>
+                        <tr>
+                            <td><div class='round-corners' style='background-color:#A0D097'></div>Quest</td>
+                            <td><div class='round-corners' style='background-color:#D1D2D4'></div>Journey and Return</td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </div>
+      </div>
 
       <footer id="about">
         Visualisation by Gordon Chan / 
