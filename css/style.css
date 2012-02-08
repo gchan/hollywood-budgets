@@ -52,6 +52,8 @@ div.stories-header {
     margin-right: 10px; }
   div.stories-header em.instruction {
     margin-right: 10px; }
+  div.stories-header div.p-definition {
+    padding-top: 2px; }
 
 div#alert-help {
   color: black;
