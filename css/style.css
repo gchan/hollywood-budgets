@@ -13,6 +13,9 @@ body {
   background-image: url("../img/white_texture.png");
   padding: 20px 0 20px 20px; }
 
+.container {
+  width: 980px; }
+
 footer {
   padding-top: 18px;
   margin-top: 18px;
@@ -27,9 +30,9 @@ footer {
     margin: 3px 10px; }
 
 div.stories-legend {
-  width: 95%;
   margin-top: 10px;
-  padding: 10px;
+  margin-bottom: 20px;
+  padding: 10px 0px 10px 10px;
   border: 1px solid #DDD;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -42,9 +45,6 @@ div.stories-legend {
 
 div.stories-header {
   padding-left: 8px;
-  padding-top: 12px;
-  margin-top: 10px;
-  border-top: 1px solid #DDD;
   width: 96%; }
   div.stories-header span.twentytwo-stories {
     font-size: 18px;
