@@ -1,4 +1,4 @@
-var svgSize = [580, 620], // width height
+var svgSize = [600, 730], // width height
     padding = [4, 10, 40, 55], // top right bottom left
     size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
     tx = function(d) { return "translate(" + x(d) + ",0)"; },

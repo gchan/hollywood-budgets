@@ -18,7 +18,7 @@ function renderSelection(){
     var stories = [];
     $(".btn.story").each(function(i, e){
         var btn = $(e);
-        if(btn.hasClass("btn-primary"))
+        if(btn.hasClass("btn-on"))
             stories.push(btn.text().toLowerCase());
     });
     
@@ -128,7 +128,7 @@ $(document).ready(function() {
     
     $('.btn.all-stories').click(function(e){
         $('.btn.story').each(function(i, e){
-            $(e).addClass("btn-primary");
+            $(e).addClass("btn-on");
         });
         renderSelection();
     });
@@ -138,7 +138,7 @@ $(document).ready(function() {
             $(e).removeClass("btn-primary");
         });
         $('.btn.story').each(function(i, e){
-            $(e).removeClass("btn-primary");
+            $(e).removeClass("btn-on");
         });
         removeAllFilms();
     });
@@ -148,16 +148,16 @@ $(document).ready(function() {
         target.toggleClass("btn-primary");
 
         renderSelection();
-        if(!target.hasClass("btn-primary"))
+        if(!target.hasClass("btn-on"))
             hideAllTooltips();
     });
     
     $(".btn.story").click(function(e){
         var target = $(e.target);
-        target.toggleClass("btn-primary");
+        target.toggleClass("btn-on");
         
         renderSelection();
-        if(!target.hasClass("btn-primary"))
+        if(!target.hasClass("btn-on"))
             hideAllTooltips();
         else
             highlightStories(target.text());
@@ -166,7 +166,7 @@ $(document).ready(function() {
     $(".btn.story").hover(
         function(e){
             var btn = $(e.target);
-            if(btn.hasClass("btn-primary"))
+            if(btn.hasClass("btn-on"))
                 setTimeout(delayedAction, 0);
             
             function delayedAction(){
