@@ -50,9 +50,9 @@ function addPopovers(stories){
             title;
     }
 
-    $('.btn.story').each(function(i, e){
+    $('.stories-buttons td').each(function(i, e){
         var btn = $(e);
-        var title = btn.text();
+        var title = btn.children("button").text();
         var story = stories[title];
         var colour = story.Colour;
         var description = story.Description;
@@ -100,6 +100,9 @@ function addPopovers(stories){
     
 $(document).ready(function() {
 
+    //disable text highlighting/selection on table
+    $("table.stories-buttons").disableSelection();
+    
     $( "#slider-range" ).slider({
         animate: true,
         range: true,
@@ -152,8 +155,10 @@ $(document).ready(function() {
             hideAllTooltips();
     });
     
-    $(".btn.story").click(function(e){
+    $(".stories-buttons td").click(function(e){
         var target = $(e.target);
+        if (!target.hasClass("btn"))
+            target = target.children("button");
         target.toggleClass("btn-on");
         
         renderSelection();
@@ -163,14 +168,16 @@ $(document).ready(function() {
             highlightStories(target.text());
     });
     
-    $(".btn.story").hover(
+    $(".stories-buttons td").hover(
         function(e){
-            var btn = $(e.target);
-            if(btn.hasClass("btn-on"))
+            var target = $(e.target);
+            if (!target.hasClass("btn"))
+                target = target.children("button");
+            if(target.hasClass("btn-on"))
                 setTimeout(delayedAction, 0);
             
             function delayedAction(){
-                highlightStories(btn.text())
+                highlightStories(target.text())
             }
         }, 
         function(e){

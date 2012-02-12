@@ -77,7 +77,8 @@ div.worldwide-gross {
 table.stories-buttons tr {
   width: 290px; }
   table.stories-buttons tr td {
-    width: 144px; }
+    width: 144px;
+    cursor: pointer; }
 
 div.stories {
   padding-bottom: 20px; }
