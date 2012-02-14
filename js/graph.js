@@ -134,6 +134,8 @@ function renderAxes() {
 
     gy.exit().remove();
 
+    unhighlight();
+
     if(renderedData)
         renderData(renderedData);
 }
@@ -152,6 +154,10 @@ function dataLoaded(data){
 function renderData(data){
     renderedData = data;
 
+    data = data
+        .filter(function (d){return d.RottenTomatoes < x.domain()[1] && d.RottenTomatoes > x.domain()[0];})
+        .filter(function (d){return d.Profitability < y.domain()[0] && d.Profitability > y.domain()[1];});
+        
     var bubbles = bubbleG.selectAll("circle")
         .data(data, function(d) { return d.Film; });
         
