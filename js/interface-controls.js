@@ -101,7 +101,7 @@ function addPopovers(stories){
 $(document).ready(function() {
 
     //disable text highlighting/selection on table
-    $("div.stories-buttons").disableSelection();
+    $("div.stories-buttons, div.stories-legend").disableSelection();    
     
     $( "#slider-range" ).slider({
         animate: true,
@@ -174,13 +174,21 @@ $(document).ready(function() {
             if (!target.hasClass("btn"))
                 target = target.children("button");
             if(target.hasClass("btn-on"))
-                setTimeout(delayedAction, 0);
+                setTimeout(delayedAction, 300);
+
+            target[0].hover = 'in';
             
             function delayedAction(){
-                highlightStories(target.text())
+                if(target[0].hover == 'in')
+                    highlightStories(target.text())
             }
         }, 
         function(e){
+            var target = $(e.target);
+            if (!target.hasClass("btn"))
+                target = target.children("button");
+            target[0].hover = 'out';
+
             unhighlight();
         }
     );
@@ -188,13 +196,18 @@ $(document).ready(function() {
     $("div.stories-legend table td").hover(
         function(e){
             var td = $(e.target);
-            setTimeout(delayedAction, 0);
+            setTimeout(delayedAction, 300);
+            td[0].hover = 'in';
             
             function delayedAction(){
-                highlightStories(td.text())
+                if(td[0].hover == 'in')
+                    highlightStories(td.text())
             }
         }, 
         function(e){
+            var td = $(e.target);
+            td[0].hover = 'out';
+
             unhighlight();
         }
     );
@@ -203,13 +216,18 @@ $(document).ready(function() {
         function(e){
             var btn = $(e.target);
             if(btn.hasClass("btn-primary"))
-                setTimeout(delayedAction, 0);
+                setTimeout(delayedAction, 400);
+            btn[0].hover = 'in'
                 
             function delayedAction(){
-                highlightYear(parseInt(btn.text()));
+                if(btn[0].hover == 'in')
+                    highlightYear(parseInt(btn.text()));
             }
         }, 
         function(e){
+            var btn = $(e.target);
+            btn[0].hover = 'out'
+
             unhighlight();
         }
     );
