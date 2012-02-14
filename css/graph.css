@@ -5,8 +5,6 @@ div#graph svg {
     stroke: white;
     stroke-width: 1.5px;
     fill-opacity: 0.8; }
-  div#graph svg circle.film.highlight {
-    fill-opacity: 1; }
   div#graph svg rect.background {
     fill: #F0ECEC; }
   div#graph svg text.film-tooltip {

@@ -175,11 +175,15 @@ function renderData(data){
 function showTooltip(e, i){    
     var circle = d3.select(this)
         .attr("class", "film highlight");
+        
+    circle
+        //.transition().duration(150)
+        .style("fill-opacity", 1);
 
     bubbleG.node().appendChild(circle.node());
 
     svg.selectAll("circle.film:not(.highlight)")
-        // .transition().duration(150)
+        //.transition().duration(150)
         .style("fill-opacity", 0.1);
 
     var tooltip = svg.selectAll("text.film-tooltip")
@@ -219,7 +223,10 @@ function hideTooltip(e, i){
 }
 
 function hideAllTooltips(){
-    svg.selectAll("text.film-tooltip").remove();
+    svg.selectAll("text.film-tooltip")
+        .transition().duration(150)
+        .style("opacity", 0)
+        .remove();
 }
 
 function highlightYear(year){
@@ -237,13 +244,16 @@ function highlightStories(story){
 }
 
 function highlightSelection(selection){
-    selection.attr("class", "film highlight");
+    selection
+        .attr("class", "film highlight")
+        .transition().duration(150)
+        .style("fill-opacity", 1);
 
     for(var i = 0; i < selection[0].length; i++)
         bubbleG.node().appendChild(selection[0][i]);
 
     svg.selectAll("circle.film:not(.highlight)")
-        // .transition().duration(50)
+        .transition().duration(150)
         .style("fill-opacity", 0.1);
         
     var tooltip = svg.selectAll("text.film-tooltip")
@@ -262,7 +272,9 @@ function highlightSelection(selection){
             return parseFloat(d3.select(d).attr("cx")) + parseFloat(b(d.__data__.WorldwideGross) * 1.5) * (renderLeft ? -1 : 1);
         })
         .attr("y", function(d) {return parseFloat(d3.select(d).attr("cy")) + 3})
-        .text(function(d) {return d.__data__.Film;});
+        .text(function(d) {return d.__data__.Film;})
+        .transition().duration(250)
+        .style("opacity", 1);
 }
 
 function reverseCircleOrder(){
@@ -274,7 +286,7 @@ function reverseCircleOrder(){
 
 function unhighlight(){
     d3.selectAll("circle.film")
-        // .transition().duration(50)
+        .transition().duration(150)
         .style("fill-opacity", 0.8)
         .attr("class", "film");
         
