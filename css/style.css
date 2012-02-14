@@ -74,11 +74,19 @@ div.worldwide-gross {
 .btn.year {
   min-width: 59px; }
 
-table.stories-buttons tr {
-  width: 290px; }
-  table.stories-buttons tr td {
-    width: 144px;
-    cursor: pointer; }
+div.stories-buttons {
+  margin-top: 2px;
+  padding: 10px 0px 6px 10px;
+  border: 1px solid #DDD;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+  div.stories-buttons table tr {
+    width: 290px; }
+    div.stories-buttons table tr td {
+      cursor: pointer; }
+      div.stories-buttons table tr td:first-child {
+        width: 164px; }
 
 div.stories {
   padding-bottom: 20px; }

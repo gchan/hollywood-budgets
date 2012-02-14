@@ -101,12 +101,24 @@ div.worldwide-gross {
     }
 }
 
-table.stories-buttons {
-    tr {
-        width: 290px;
-        td {
-            width: 144px;
-            cursor: pointer;
+div.stories-buttons {
+    margin-top: 2px;
+    padding: 10px 0px 6px 10px;
+    
+    border: 1px solid #DDD;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    table {
+        tr {
+            width: 290px;
+            td {
+                cursor: pointer;
+                &:first-child {
+                    width: 164px;
+                }
+            }
         }
     }
 }

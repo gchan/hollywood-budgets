@@ -101,7 +101,7 @@ function addPopovers(stories){
 $(document).ready(function() {
 
     //disable text highlighting/selection on table
-    $("table.stories-buttons").disableSelection();
+    $("div.stories-buttons").disableSelection();
     
     $( "#slider-range" ).slider({
         animate: true,
