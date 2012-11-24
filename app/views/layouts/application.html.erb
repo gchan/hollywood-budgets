@@ -12,5 +12,6 @@
   </head>
   <body>
     <%= yield %>
+    <%= google_analytics_js.html_safe if Rails.env.production? %>
   </body>
 </html>
