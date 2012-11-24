@@ -1,4 +1,3 @@
-// $(function(){
   var svgSize = [600, 730], // width height
       padding = [4, 10, 40, 55], // top right bottom left
       size = [svgSize[0] - padding[1] - padding[3], svgSize[1] - padding[0] - padding[2]], // width height
@@ -331,4 +330,3 @@
 
       renderData(filteredData);
   }
-// });
