@@ -1,0 +1,209 @@
+html {
+    background-color: #fbfff7;
+}
+
+body {
+    background-color: #fbfff7;
+    padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */ 
+}
+
+.container > {
+    footer p {
+        text-align: center; /* center align it with the container */ 
+    }
+    .hero-unit {
+        background-image: url(<%= image_path 'white_texture.png' %>);
+        padding: 20px 0 20px 20px;
+    } 
+}
+
+.container {
+    width: 980px;
+}
+
+footer {
+    padding-top: 18px;
+    margin-top: 18px;
+    border-top: 1px solid #EEE;
+}
+
+.row > .controls {
+    padding-left: 18px;
+    border-left: 1px solid #dddddd;
+    margin-left: -3px;
+    min-height: 620px;
+    
+    #slider-range {
+        margin: 3px 10px; 
+    }
+}
+
+div.stories-legend {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0px 10px 10px;
+    
+    border: 1px solid #DDD;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    table {
+        margin-bottom: 0px;
+        td {
+            width: 20%;
+            border-top: 0px;
+        }
+    }
+}
+   
+div.stories-header {
+    padding-left: 8px;
+    width: 96%;
+
+    span.twentytwo-stories {
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    
+    em.instruction {
+        margin-right: 10px;
+    }
+    
+    div.p-definition {
+        padding-top: 2px;
+    }
+}
+    
+div#alert-help {
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+div.worldwide-gross {
+    margin-right: 9px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    &.story {        
+        height: 27px;
+        width: 27px;
+        text-indent: 100px; //hide the button text
+        overflow: hidden;
+        margin-bottom: 4px;
+        margin-right: 5px;
+    }
+    &.year {
+        min-width: 59px;
+    }
+}
+
+div.stories-buttons {
+    margin-top: 2px;
+    padding: 10px 0px 6px 10px;
+    
+    border: 1px solid #DDD;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    table {
+        tr {
+            width: 290px;
+            td {
+                cursor: pointer;
+                &:first-child {
+                    width: 164px;
+                }
+            }
+        }
+    }
+}
+
+div.stories {
+    padding-bottom: 20px;
+}
+
+div.meta {
+    .btn {
+        min-width: 95px;
+    }
+}
+
+div.film-details{
+    padding-bottom: 10px;
+    .film-label {
+        font-weight: bold; 
+    }
+
+    .film-datum {
+        font-weight: normal; 
+    }
+
+    #film-name {
+        font-weight: bold; 
+    }
+}
+
+.round-corners {
+    float: left;
+    margin-right: 10px;
+    
+	height: 20px;
+	width: 20px;
+
+	//border-width: 1px;
+	//border-style: solid;
+	//border-color: black;
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.btn-temptation.btn-on { background-color: hsl(17, 52%, 64%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(17, 52%, 78%)", endColorStr="hsl(17, 52%, 64%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(17, 52%, 78%)), to(hsl(17, 52%, 64%))); background-image: -moz-linear-gradient(top, hsl(17, 52%, 78%), hsl(17, 52%, 64%)); background-image: -ms-linear-gradient(top, hsl(17, 52%, 78%), hsl(17, 52%, 64%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(17, 52%, 78%)), color-stop(100%, hsl(17, 52%, 64%))); background-image: -webkit-linear-gradient(top, hsl(17, 52%, 78%), hsl(17, 52%, 64%)); background-image: -o-linear-gradient(top, hsl(17, 52%, 78%), hsl(17, 52%, 64%)); background-image: linear-gradient(hsl(17, 52%, 78%), hsl(17, 52%, 64%)); border-color: hsl(17, 52%, 64%) hsl(17, 52%, 64%) hsl(17, 52%, 60.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-rag-to-riches.btn-on { background-color: hsl(229, 44%, 38%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(229, 44%, 52%)", endColorStr="hsl(229, 44%, 38%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(229, 44%, 52%)), to(hsl(229, 44%, 38%))); background-image: -moz-linear-gradient(top, hsl(229, 44%, 52%), hsl(229, 44%, 38%)); background-image: -ms-linear-gradient(top, hsl(229, 44%, 52%), hsl(229, 44%, 38%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(229, 44%, 52%)), color-stop(100%, hsl(229, 44%, 38%))); background-image: -webkit-linear-gradient(top, hsl(229, 44%, 52%), hsl(229, 44%, 38%)); background-image: -o-linear-gradient(top, hsl(229, 44%, 52%), hsl(229, 44%, 38%)); background-image: linear-gradient(hsl(229, 44%, 52%), hsl(229, 44%, 38%)); border-color: hsl(229, 44%, 38%) hsl(229, 44%, 38%) hsl(229, 44%, 34.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-the-riddle.btn-on { background-color: hsl(171, 34%, 67%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(171, 34%, 81%)", endColorStr="hsl(171, 34%, 67%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(171, 34%, 81%)), to(hsl(171, 34%, 67%))); background-image: -moz-linear-gradient(top, hsl(171, 34%, 81%), hsl(171, 34%, 67%)); background-image: -ms-linear-gradient(top, hsl(171, 34%, 81%), hsl(171, 34%, 67%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(171, 34%, 81%)), color-stop(100%, hsl(171, 34%, 67%))); background-image: -webkit-linear-gradient(top, hsl(171, 34%, 81%), hsl(171, 34%, 67%)); background-image: -o-linear-gradient(top, hsl(171, 34%, 81%), hsl(171, 34%, 67%)); background-image: linear-gradient(hsl(171, 34%, 81%), hsl(171, 34%, 67%)); border-color: hsl(171, 34%, 67%) hsl(171, 34%, 67%) hsl(171, 34%, 63.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-metamorphosis.btn-on { background-color: hsl(220, 2%, 28%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(220, 2%, 42%)", endColorStr="hsl(220, 2%, 28%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(220, 2%, 42%)), to(hsl(220, 2%, 28%))); background-image: -moz-linear-gradient(top, hsl(220, 2%, 42%), hsl(220, 2%, 28%)); background-image: -ms-linear-gradient(top, hsl(220, 2%, 42%), hsl(220, 2%, 28%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(220, 2%, 42%)), color-stop(100%, hsl(220, 2%, 28%))); background-image: -webkit-linear-gradient(top, hsl(220, 2%, 42%), hsl(220, 2%, 28%)); background-image: -o-linear-gradient(top, hsl(220, 2%, 42%), hsl(220, 2%, 28%)); background-image: linear-gradient(hsl(220, 2%, 42%), hsl(220, 2%, 28%)); border-color: hsl(220, 2%, 28%) hsl(220, 2%, 28%) hsl(220, 2%, 24.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-rescue.btn-on { background-color: hsl(335, 82%, 55%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(335, 82%, 69%)", endColorStr="hsl(335, 82%, 55%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(335, 82%, 69%)), to(hsl(335, 82%, 55%))); background-image: -moz-linear-gradient(top, hsl(335, 82%, 69%), hsl(335, 82%, 55%)); background-image: -ms-linear-gradient(top, hsl(335, 82%, 69%), hsl(335, 82%, 55%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(335, 82%, 69%)), color-stop(100%, hsl(335, 82%, 55%))); background-image: -webkit-linear-gradient(top, hsl(335, 82%, 69%), hsl(335, 82%, 55%)); background-image: -o-linear-gradient(top, hsl(335, 82%, 69%), hsl(335, 82%, 55%)); background-image: linear-gradient(hsl(335, 82%, 69%), hsl(335, 82%, 55%)); border-color: hsl(335, 82%, 55%) hsl(335, 82%, 55%) hsl(335, 82%, 51.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-tragedy.btn-on { background-color: hsl(36, 63%, 39%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(36, 63%, 53%)", endColorStr="hsl(36, 63%, 39%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(36, 63%, 53%)), to(hsl(36, 63%, 39%))); background-image: -moz-linear-gradient(top, hsl(36, 63%, 53%), hsl(36, 63%, 39%)); background-image: -ms-linear-gradient(top, hsl(36, 63%, 53%), hsl(36, 63%, 39%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(36, 63%, 53%)), color-stop(100%, hsl(36, 63%, 39%))); background-image: -webkit-linear-gradient(top, hsl(36, 63%, 53%), hsl(36, 63%, 39%)); background-image: -o-linear-gradient(top, hsl(36, 63%, 53%), hsl(36, 63%, 39%)); background-image: linear-gradient(hsl(36, 63%, 53%), hsl(36, 63%, 39%)); border-color: hsl(36, 63%, 39%) hsl(36, 63%, 39%) hsl(36, 63%, 35.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-love.btn-on { background-color: hsl(111, 38%, 63%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(111, 38%, 77%)", endColorStr="hsl(111, 38%, 63%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(111, 38%, 77%)), to(hsl(111, 38%, 63%))); background-image: -moz-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: -ms-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(111, 38%, 77%)), color-stop(100%, hsl(111, 38%, 63%))); background-image: -webkit-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: -o-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: linear-gradient(hsl(111, 38%, 77%), hsl(111, 38%, 63%)); border-color: hsl(111, 38%, 63%) hsl(111, 38%, 63%) hsl(111, 38%, 59.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-monster-force.btn-on { background-color: hsl(360, 86%, 47%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(360, 86%, 61%)", endColorStr="hsl(360, 86%, 47%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(360, 86%, 61%)), to(hsl(360, 86%, 47%))); background-image: -moz-linear-gradient(top, hsl(360, 86%, 61%), hsl(360, 86%, 47%)); background-image: -ms-linear-gradient(top, hsl(360, 86%, 61%), hsl(360, 86%, 47%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(360, 86%, 61%)), color-stop(100%, hsl(360, 86%, 47%))); background-image: -webkit-linear-gradient(top, hsl(360, 86%, 61%), hsl(360, 86%, 47%)); background-image: -o-linear-gradient(top, hsl(360, 86%, 61%), hsl(360, 86%, 47%)); background-image: linear-gradient(hsl(360, 86%, 61%), hsl(360, 86%, 47%)); border-color: hsl(360, 86%, 47%) hsl(360, 86%, 47%) hsl(360, 86%, 43.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-revenge.btn-on { background-color: hsl(90, 50%, 43%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(90, 50%, 57%)", endColorStr="hsl(90, 50%, 43%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(90, 50%, 57%)), to(hsl(90, 50%, 43%))); background-image: -moz-linear-gradient(top, hsl(90, 50%, 57%), hsl(90, 50%, 43%)); background-image: -ms-linear-gradient(top, hsl(90, 50%, 57%), hsl(90, 50%, 43%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(90, 50%, 57%)), color-stop(100%, hsl(90, 50%, 43%))); background-image: -webkit-linear-gradient(top, hsl(90, 50%, 57%), hsl(90, 50%, 43%)); background-image: -o-linear-gradient(top, hsl(90, 50%, 57%), hsl(90, 50%, 43%)); background-image: linear-gradient(hsl(90, 50%, 57%), hsl(90, 50%, 43%)); border-color: hsl(90, 50%, 43%) hsl(90, 50%, 43%) hsl(90, 50%, 39.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-transformation.btn-on { background-color: hsl(50, 58%, 39%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(50, 58%, 53%)", endColorStr="hsl(50, 58%, 39%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(50, 58%, 53%)), to(hsl(50, 58%, 39%))); background-image: -moz-linear-gradient(top, hsl(50, 58%, 53%), hsl(50, 58%, 39%)); background-image: -ms-linear-gradient(top, hsl(50, 58%, 53%), hsl(50, 58%, 39%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(50, 58%, 53%)), color-stop(100%, hsl(50, 58%, 39%))); background-image: -webkit-linear-gradient(top, hsl(50, 58%, 53%), hsl(50, 58%, 39%)); background-image: -o-linear-gradient(top, hsl(50, 58%, 53%), hsl(50, 58%, 39%)); background-image: linear-gradient(hsl(50, 58%, 53%), hsl(50, 58%, 39%)); border-color: hsl(50, 58%, 39%) hsl(50, 58%, 39%) hsl(50, 58%, 35.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-fish-out-of-water.btn-on { background-color: hsl(46, 38%, 71%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(46, 38%, 85%)", endColorStr="hsl(46, 38%, 71%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(46, 38%, 85%)), to(hsl(46, 38%, 71%))); background-image: -moz-linear-gradient(top, hsl(46, 38%, 85%), hsl(46, 38%, 71%)); background-image: -ms-linear-gradient(top, hsl(46, 38%, 85%), hsl(46, 38%, 71%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(46, 38%, 85%)), color-stop(100%, hsl(46, 38%, 71%))); background-image: -webkit-linear-gradient(top, hsl(46, 38%, 85%), hsl(46, 38%, 71%)); background-image: -o-linear-gradient(top, hsl(46, 38%, 85%), hsl(46, 38%, 71%)); background-image: linear-gradient(hsl(46, 38%, 85%), hsl(46, 38%, 71%)); border-color: hsl(46, 38%, 71%) hsl(46, 38%, 71%) hsl(46, 38%, 67.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-maturation.btn-on { background-color: hsl(12, 68%, 43%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(12, 68%, 57%)", endColorStr="hsl(12, 68%, 43%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(12, 68%, 57%)), to(hsl(12, 68%, 43%))); background-image: -moz-linear-gradient(top, hsl(12, 68%, 57%), hsl(12, 68%, 43%)); background-image: -ms-linear-gradient(top, hsl(12, 68%, 57%), hsl(12, 68%, 43%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(12, 68%, 57%)), color-stop(100%, hsl(12, 68%, 43%))); background-image: -webkit-linear-gradient(top, hsl(12, 68%, 57%), hsl(12, 68%, 43%)); background-image: -o-linear-gradient(top, hsl(12, 68%, 57%), hsl(12, 68%, 43%)); background-image: linear-gradient(hsl(12, 68%, 57%), hsl(12, 68%, 43%)); border-color: hsl(12, 68%, 43%) hsl(12, 68%, 43%) hsl(12, 68%, 39.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-pursuit.btn-on { background-color: hsl(314, 35%, 47%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(314, 35%, 61%)", endColorStr="hsl(314, 35%, 47%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(314, 35%, 61%)), to(hsl(314, 35%, 47%))); background-image: -moz-linear-gradient(top, hsl(314, 35%, 61%), hsl(314, 35%, 47%)); background-image: -ms-linear-gradient(top, hsl(314, 35%, 61%), hsl(314, 35%, 47%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(314, 35%, 61%)), color-stop(100%, hsl(314, 35%, 47%))); background-image: -webkit-linear-gradient(top, hsl(314, 35%, 61%), hsl(314, 35%, 47%)); background-image: -o-linear-gradient(top, hsl(314, 35%, 61%), hsl(314, 35%, 47%)); background-image: linear-gradient(hsl(314, 35%, 61%), hsl(314, 35%, 47%)); border-color: hsl(314, 35%, 47%) hsl(314, 35%, 47%) hsl(314, 35%, 43.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-rivalry.btn-on { background-color: hsl(126, 41%, 44%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(126, 41%, 58%)", endColorStr="hsl(126, 41%, 44%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(126, 41%, 58%)), to(hsl(126, 41%, 44%))); background-image: -moz-linear-gradient(top, hsl(126, 41%, 58%), hsl(126, 41%, 44%)); background-image: -ms-linear-gradient(top, hsl(126, 41%, 58%), hsl(126, 41%, 44%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(126, 41%, 58%)), color-stop(100%, hsl(126, 41%, 44%))); background-image: -webkit-linear-gradient(top, hsl(126, 41%, 58%), hsl(126, 41%, 44%)); background-image: -o-linear-gradient(top, hsl(126, 41%, 58%), hsl(126, 41%, 44%)); background-image: linear-gradient(hsl(126, 41%, 58%), hsl(126, 41%, 44%)); border-color: hsl(126, 41%, 44%) hsl(126, 41%, 44%) hsl(126, 41%, 40.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-underdog.btn-on { background-color: hsl(4, 66%, 31%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(4, 66%, 45%)", endColorStr="hsl(4, 66%, 31%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(4, 66%, 45%)), to(hsl(4, 66%, 31%))); background-image: -moz-linear-gradient(top, hsl(4, 66%, 45%), hsl(4, 66%, 31%)); background-image: -ms-linear-gradient(top, hsl(4, 66%, 45%), hsl(4, 66%, 31%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(4, 66%, 45%)), color-stop(100%, hsl(4, 66%, 31%))); background-image: -webkit-linear-gradient(top, hsl(4, 66%, 45%), hsl(4, 66%, 31%)); background-image: -o-linear-gradient(top, hsl(4, 66%, 45%), hsl(4, 66%, 31%)); background-image: linear-gradient(hsl(4, 66%, 45%), hsl(4, 66%, 31%)); border-color: hsl(4, 66%, 31%) hsl(4, 66%, 31%) hsl(4, 66%, 27.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-discovery.btn-on { background-color: hsl(31, 60%, 28%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(31, 60%, 42%)", endColorStr="hsl(31, 60%, 28%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(31, 60%, 42%)), to(hsl(31, 60%, 28%))); background-image: -moz-linear-gradient(top, hsl(31, 60%, 42%), hsl(31, 60%, 28%)); background-image: -ms-linear-gradient(top, hsl(31, 60%, 42%), hsl(31, 60%, 28%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(31, 60%, 42%)), color-stop(100%, hsl(31, 60%, 28%))); background-image: -webkit-linear-gradient(top, hsl(31, 60%, 42%), hsl(31, 60%, 28%)); background-image: -o-linear-gradient(top, hsl(31, 60%, 42%), hsl(31, 60%, 28%)); background-image: linear-gradient(hsl(31, 60%, 42%), hsl(31, 60%, 28%)); border-color: hsl(31, 60%, 28%) hsl(31, 60%, 28%) hsl(31, 60%, 24.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-escape.btn-on { background-color: hsl(321, 75%, 26%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(321, 75%, 40%)", endColorStr="hsl(321, 75%, 26%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(321, 75%, 40%)), to(hsl(321, 75%, 26%))); background-image: -moz-linear-gradient(top, hsl(321, 75%, 40%), hsl(321, 75%, 26%)); background-image: -ms-linear-gradient(top, hsl(321, 75%, 40%), hsl(321, 75%, 26%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(321, 75%, 40%)), color-stop(100%, hsl(321, 75%, 26%))); background-image: -webkit-linear-gradient(top, hsl(321, 75%, 40%), hsl(321, 75%, 26%)); background-image: -o-linear-gradient(top, hsl(321, 75%, 40%), hsl(321, 75%, 26%)); background-image: linear-gradient(hsl(321, 75%, 40%), hsl(321, 75%, 26%)); border-color: hsl(321, 75%, 26%) hsl(321, 75%, 26%) hsl(321, 75%, 22.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-journey-and-return.btn-on { background-color: hsl(220, 3%, 76%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(220, 3%, 90%)", endColorStr="hsl(220, 3%, 76%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(220, 3%, 90%)), to(hsl(220, 3%, 76%))); background-image: -moz-linear-gradient(top, hsl(220, 3%, 90%), hsl(220, 3%, 76%)); background-image: -ms-linear-gradient(top, hsl(220, 3%, 90%), hsl(220, 3%, 76%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(220, 3%, 90%)), color-stop(100%, hsl(220, 3%, 76%))); background-image: -webkit-linear-gradient(top, hsl(220, 3%, 90%), hsl(220, 3%, 76%)); background-image: -o-linear-gradient(top, hsl(220, 3%, 90%), hsl(220, 3%, 76%)); background-image: linear-gradient(hsl(220, 3%, 90%), hsl(220, 3%, 76%)); border-color: hsl(220, 3%, 76%) hsl(220, 3%, 76%) hsl(220, 3%, 72.5%); color: #333 !important; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-comedy.btn-on { background-color: hsl(176, 67%, 35%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(176, 67%, 49%)", endColorStr="hsl(176, 67%, 35%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(176, 67%, 49%)), to(hsl(176, 67%, 35%))); background-image: -moz-linear-gradient(top, hsl(176, 67%, 49%), hsl(176, 67%, 35%)); background-image: -ms-linear-gradient(top, hsl(176, 67%, 49%), hsl(176, 67%, 35%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(176, 67%, 49%)), color-stop(100%, hsl(176, 67%, 35%))); background-image: -webkit-linear-gradient(top, hsl(176, 67%, 49%), hsl(176, 67%, 35%)); background-image: -o-linear-gradient(top, hsl(176, 67%, 49%), hsl(176, 67%, 35%)); background-image: linear-gradient(hsl(176, 67%, 49%), hsl(176, 67%, 35%)); border-color: hsl(176, 67%, 35%) hsl(176, 67%, 35%) hsl(176, 67%, 31.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-quest.btn-on { background-color: hsl(111, 38%, 63%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(111, 38%, 77%)", endColorStr="hsl(111, 38%, 63%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(111, 38%, 77%)), to(hsl(111, 38%, 63%))); background-image: -moz-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: -ms-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(111, 38%, 77%)), color-stop(100%, hsl(111, 38%, 63%))); background-image: -webkit-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: -o-linear-gradient(top, hsl(111, 38%, 77%), hsl(111, 38%, 63%)); background-image: linear-gradient(hsl(111, 38%, 77%), hsl(111, 38%, 63%)); border-color: hsl(111, 38%, 63%) hsl(111, 38%, 63%) hsl(111, 38%, 59.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-sacrifice.btn-on { background-color: hsl(282, 49%, 32%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(282, 49%, 46%)", endColorStr="hsl(282, 49%, 32%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(282, 49%, 46%)), to(hsl(282, 49%, 32%))); background-image: -moz-linear-gradient(top, hsl(282, 49%, 46%), hsl(282, 49%, 32%)); background-image: -ms-linear-gradient(top, hsl(282, 49%, 46%), hsl(282, 49%, 32%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(282, 49%, 46%)), color-stop(100%, hsl(282, 49%, 32%))); background-image: -webkit-linear-gradient(top, hsl(282, 49%, 46%), hsl(282, 49%, 32%)); background-image: -o-linear-gradient(top, hsl(282, 49%, 46%), hsl(282, 49%, 32%)); background-image: linear-gradient(hsl(282, 49%, 46%), hsl(282, 49%, 32%)); border-color: hsl(282, 49%, 32%) hsl(282, 49%, 32%) hsl(282, 49%, 28.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
+
+.btn-wretched-excess.btn-on { background-color: hsl(225, 2%, 36%) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="hsl(225, 2%, 50%)", endColorStr="hsl(225, 2%, 36%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(225, 2%, 50%)), to(hsl(225, 2%, 36%))); background-image: -moz-linear-gradient(top, hsl(225, 2%, 50%), hsl(225, 2%, 36%)); background-image: -ms-linear-gradient(top, hsl(225, 2%, 50%), hsl(225, 2%, 36%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(225, 2%, 50%)), color-stop(100%, hsl(225, 2%, 36%))); background-image: -webkit-linear-gradient(top, hsl(225, 2%, 50%), hsl(225, 2%, 36%)); background-image: -o-linear-gradient(top, hsl(225, 2%, 50%), hsl(225, 2%, 36%)); background-image: linear-gradient(hsl(225, 2%, 50%), hsl(225, 2%, 36%)); border-color: hsl(225, 2%, 36%) hsl(225, 2%, 36%) hsl(225, 2%, 32.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23); -webkit-font-smoothing: antialiased; }
