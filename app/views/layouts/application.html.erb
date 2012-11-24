@@ -9,8 +9,18 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <%= stylesheet_link_tag "gh-fork-ribbon" %>
+    <!--[if IE]>
+      <%= stylesheet_link_tag "gh-fork-ribbon.ie" %>
+    <![endif]-->
   </head>
   <body>
+    <div class="github-fork-ribbon-wrapper right">
+      <div class="github-fork-ribbon">
+        <a href="https://github.com/gchan/hollywood-budgets">Fork me on GitHub</a>
+      </div>
+    </div>
     <%= yield %>
     <%= google_analytics_js.html_safe if Rails.env.production? %>
   </body>

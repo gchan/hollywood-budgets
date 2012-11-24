@@ -9,7 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require graph
+ *= require jquery-ui-1.9.0.custom
+ *= require jquery.ui.1.9.0.ie
+ *= require style
  */
 
  @import "twitter/bootstrap/"
