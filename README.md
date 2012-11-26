@@ -44,7 +44,7 @@ Potential Improvements
 
 Credits
 ---------------------
-This nifty data viz was created by [Gordon Chan](twitter.com/devgordon).
+This nifty data viz was created by [Gordon Chan](http://twitter.com/devgordon).
 Feel free to fork and contribute. :)
 
 Hollywood Budgets is free software distributed under the new BSD License.
